@@ -27,6 +27,13 @@ body {
     flex-direction: column;
 }
 
+/* Global Section Isolation */
+section {
+    position: relative;
+    isolation: isolate;
+}
+
+
 /* Background & Canvas */
 .background-container {
     position: fixed;
@@ -773,6 +780,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    isolation: isolate;
 }
 
 .careers-header {
@@ -785,7 +796,7 @@ body {
     /* Slider height needs to be fixed to accommodate absolute cards */
     height: 900px;
     width: 100%;
-    overflow: visible;
+    overflow: hidden;
     max-width: 900px;
     margin-bottom: 4rem;
     /* Constrain width */
@@ -998,6 +1009,9 @@ body {
     align-items: center;
     min-height: 100vh;
     background: white;
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
 }
 
 .partner-card {
