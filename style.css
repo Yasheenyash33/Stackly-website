@@ -1,0 +1,1498 @@
+:root {
+    --bg-color: #050505;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent-start: #4ADE80;
+    /* Green */
+    --accent-end: #22D3EE;
+    /* Cyan */
+    --navbar-bg: rgba(255, 255, 255, 0.1);
+    --navbar-border: rgba(255, 255, 255, 0.1);
+    --font-family: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Background & Canvas */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000000 100%);
+}
+
+#particle-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    background: var(--navbar-bg);
+    border: 1px solid var(--navbar-border);
+    border-radius: 999px;
+    padding: 0.75rem 2rem;
+    gap: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    color: var(--text-primary);
+}
+
+.menu-btn {
+    background: var(--navbar-bg);
+    border: 1px solid var(--navbar-border);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Section */
+.hero-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    margin-top: 60px;
+    /* Offset for fixed header */
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 10;
+}
+
+.hero-title {
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.gradient-text {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2em;
+    /* Gap for icon */
+}
+
+/* Gradient text effect specifically for the word 'solutions' if we want text-fill-color, 
+   but the image has a white specific 'solutions' with a logo, wait looking closely...
+   The image has "cutting-edge" in white, and "solutions" with the logo.
+   Actually, looking closer at the crop, "cutting-edge" is white. 
+   "solutions" is white too, but there is a logo REPLACING the 'S' or before it?
+   Ah, in the image: "cutting-edge" line break. Then Logo + "olutions". 
+   Wait, the logo is the 'S'. 
+   Let's adjust html slightly or css to match. 
+   "cutting-edge"
+   [Logo] "olutions"
+   
+   Okay, I'll tweak the CSS to handle the icon-inline better.
+*/
+
+.hero-title .icon-inline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(5px);
+    /* Optical alignment */
+}
+
+.people-icons-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    /* Optional: Animate it slightly floating */
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+.hero-footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    /* Button on the right */
+    padding: 0 4rem;
+    position: absolute;
+    bottom: 3rem;
+    pointer-events: none;
+    /* Let clicks pass through empty space */
+}
+
+.cta-button {
+    pointer-events: auto;
+    /* Re-enable clicks */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.cta-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .nav-links {
+        display: none;
+        /* Hide for mobile for now, simple implementation */
+    }
+
+    .hero-footer {
+        justify-content: center;
+        padding: 0;
+        bottom: 2rem;
+        position: relative;
+        margin-top: 3rem;
+    }
+}
+
+/* Light Theme overrides */
+.light-theme {
+    --bg-color: #ffffff;
+    --text-primary: #111111;
+    --text-secondary: #555555;
+    --navbar-bg: rgba(255, 255, 255, 0.8);
+    --navbar-border: rgba(0, 0, 0, 0.05);
+}
+
+.light-theme .background-container {
+    display: none;
+}
+
+.light-theme .navbar {
+    border-bottom: 1px solid var(--navbar-border);
+}
+
+.light-theme .nav-links {
+    background: rgba(240, 240, 240, 0.5);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.light-theme .menu-btn svg rect {
+    fill: var(--text-primary);
+}
+
+/* Expertise Section */
+.expertise-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 0 1rem;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.badge {
+    background: linear-gradient(90deg, #60af7c 0%, #469c85 100%);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.2);
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+    line-height: 1.6;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #5ABCB9 0%, #4ADE80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Floating Icons */
+.floating-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.float-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #6EDCC4 0%, #4ADE80 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(74, 222, 128, 0.15);
+    opacity: 0.8;
+    transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.float-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Initial Center State for Animation */
+.icon-center {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0) !important;
+    opacity: 0;
+}
+
+/* Positioning Icons randomly roughly matching image */
+/* Converted all to top/left for smooth transition from center */
+.icon-1 {
+    top: 15%;
+    left: 10%;
+    transform: rotate(-10deg);
+}
+
+.icon-2 {
+    top: 30%;
+    left: 20%;
+    transform: scale(0.8) rotate(15deg);
+}
+
+.icon-3 {
+    top: 40%;
+    left: 8%;
+    transform: scale(0.9) rotate(-5deg);
+}
+
+.icon-4 {
+    top: 55%;
+    left: 15%;
+    transform: scale(0.7) rotate(10deg);
+}
+
+.icon-5 {
+    top: 18%;
+    left: 85%;
+    transform: rotate(5deg);
+}
+
+.icon-6 {
+    top: 35%;
+    left: 92%;
+    transform: scale(0.8) rotate(-15deg);
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .stats-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .float-icon {
+        display: none;
+    }
+
+    /* Hide clutter on mobile */
+    .expertise-section {
+        height: auto;
+        padding: 4rem 1rem;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .service-details {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Services Page Styles */
+.services-section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4rem;
+    min-height: 100vh;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    gap: 4rem;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.service-item {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    text-transform: uppercase;
+}
+
+.service-item:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.service-item.active {
+    color: #4ADE80;
+    /* Gradient effect handled via text-fill usually, but flat color matches image glow */
+    background: linear-gradient(90deg, #4ADE80 0%, #22D3EE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+    font-size: 1.75rem;
+    padding-left: 2rem;
+}
+
+/* Brackets for active item */
+.bracket {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    opacity: 0.8;
+}
+
+.bracket.top-left {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.bracket.bottom-right {
+    bottom: 0;
+    right: 0;
+    /* Image shows it slightly offset from text? Or just bounding box? */
+    /* Looking at image: It seems to bracket the text: [ UI UX DESIGN ] but simpler corners */
+    /* Let's replicate the L shapes */
+    border-left: none;
+    border-top: none;
+}
+
+/* Right Content */
+.service-details {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.details-title {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.details-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-pill {
+    background: linear-gradient(90deg, #5ABCB9 0%, #4ADE80 100%);
+    color: white;
+    /* Image shows dark text? No, seems white text on translucent pill? Or teal pill? */
+    /* Image: "View all" looks like a gradient button, maybe glassmorphic */
+    padding: 0.75rem 2rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);
+    transition: transform 0.2s;
+}
+
+.btn-pill:hover {
+    transform: translateY(-2px);
+}
+
+.btn-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4ADE80;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    transition: all 0.2s;
+}
+
+.btn-icon:hover {
+    background: rgba(74, 222, 128, 0.2);
+    transform: rotate(45deg);
+}
+
+/* Projects Page Styles */
+.projects-section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.projects-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects-title {
+    font-size: 5rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 1;
+}
+
+/* Play button overlay */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 5;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.play-button svg {
+    width: 32px;
+    height: 32px;
+    margin-left: 4px;
+    /* Optical center for triangle */
+}
+
+/* Dot Patterns */
+.dot-pattern {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.left-pattern {
+    bottom: 5%;
+    left: 5%;
+}
+
+.right-pattern {
+    /* Image shows it roughly middle right */
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+}
+
+@media (max-width: 768px) {
+    .projects-title {
+        font-size: 3rem;
+    }
+
+    .left-pattern,
+    .right-pattern {
+        opacity: 0.5;
+        transform: scale(0.7);
+    }
+
+    .right-pattern {
+        /* Maintain vertical centering on mobile but scaled */
+        top: 50%;
+        transform: translateY(-50%) scale(0.7);
+    }
+}
+
+/* Video Overlay Styles */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.video-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.video-container {
+    width: 80%;
+    max-width: 1000px;
+    aspect-ratio: 16/9;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.close-video-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.close-video-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Careers / Showcase Page Styles */
+.careers-section {
+    padding: 8rem 4rem 4rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.careers-header {
+    margin-bottom: 3rem;
+    max-width: 600px;
+}
+
+.showcase-slider {
+    position: relative;
+    /* Slider height needs to be fixed to accommodate absolute cards */
+    height: 900px;
+    width: 100%;
+    overflow: visible;
+    max-width: 900px;
+    margin-bottom: 4rem;
+    /* Constrain width */
+}
+
+.showcase-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-origin: center center;
+    opacity: 0;
+    transform: translateY(100px) scale(0.9);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.showcase-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* When a card is 'stacked' beneath the visible ones (for the reverse effect or if we want to keep them)
+   User said "overflow with first image" (on top). 
+   So card 1 is visible. Card 2 slides on top. 
+   Meaning Card 1 should STAY visible but be covered? 
+   No, if Card 1 stays visible, Card 2 covers it.
+   So Card 1 is z-index 1. Card 2 is z-index 2. 
+   
+   If we are currently at Step 2 (Card 2 is top):
+   Card 1: visible, z-index 1.
+   Card 2: visible, z-index 2.
+   Card 3: hidden.
+   
+   We need a class for "below" cards.
+*/
+
+.showcase-card.below {
+    opacity: 1;
+    transform: scale(0.95);
+    /* subtle scale down for depth */
+    pointer-events: none;
+    filter: brightness(0.95);
+    z-index: 1;
+}
+
+.showcase-card.below-2 {
+    opacity: 1;
+    transform: scale(0.9);
+    filter: brightness(0.9);
+    z-index: 0;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-number {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #9CA3AF;
+    border: 1px solid #E5E7EB;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.card-desc {
+    color: #6B7280;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.card-visual {
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    /* Button and visual */
+}
+
+.tablet-frame {
+    background: #111827;
+    border-radius: 20px;
+    padding: 12px;
+    width: 600px;
+    height: 350px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.screen-content {
+    background: #000;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    /* Create a fake "Art Exhibit" look */
+    background: radial-gradient(circle at center, #1f2937, #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen-layout {
+    text-align: center;
+    color: white;
+}
+
+.screen-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 1rem 0;
+    background: linear-gradient(90deg, #fff, #9ca3af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.screen-btn-fake {
+    width: 100px;
+    height: 4px;
+    background: #4ADE80;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.hand-svg {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.btn-pill.small {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* Actually image shows it inside the card visual area but outside tablet? 
+       Or overlaying? 
+       In image, 'LEARN MORE' is small pill. 
+       Let's place it nicely. */
+    right: auto;
+    left: 20px;
+    bottom: 20px;
+    z-index: 10;
+}
+
+@media (max-width: 1024px) {
+    .showcase-card {
+        flex: 0 0 90%;
+    }
+
+    .tablet-frame {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .careers-section {
+        padding: 2rem 1rem;
+    }
+
+    .showcase-slider {
+        flex-direction: column;
+    }
+
+    .showcase-card {
+        flex: 0 0 100%;
+    }
+}
+
+/* Partners Page Styles */
+.partners-section {
+    padding: 8rem 2rem 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: white;
+}
+
+.partner-card {
+    background: black;
+    border-radius: 30px;
+    padding: 4rem;
+    max-width: 1000px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    /* Subtle gradient background like image */
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+/* Glow effect in top left corner */
+.partner-card::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(74, 222, 128, 0.2) 0%, transparent 70%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.partner-badge {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #4ADE80;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    background: linear-gradient(90deg, rgba(74, 222, 128, 0.1), transparent);
+}
+
+.partner-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+.partner-logo svg {
+    /* Need to match the P logo shape better or use simpler one */
+}
+
+/* Custom P logo construction if SVG path in HTML isn't enough */
+/* The image shows a stylized 'P' with green gradient */
+
+.partner-logo svg path {
+    fill: url(#paint0_linear);
+    /* Reusing global gradient if possible, else defaults */
+}
+
+.partner-name {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #4ADE80, #fff);
+    /* Greenish tint */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+.partner-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #9CA3AF;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.partner-desc .highlight {
+    color: #E2E8F0;
+    /* Lighter/White for emphasis */
+    font-weight: 500;
+}
+
+.partner-pattern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* Corner markers/lines at bottom left/right as seen in image */
+.partner-card::after {
+    content: '';
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 100px;
+    height: 100px;
+    border-right: 1px dashed rgba(255, 255, 255, 0.2);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .partner-card {
+        padding: 2rem;
+    }
+
+    .partner-name {
+        font-size: 1.5rem;
+    }
+}
+
+/* Partner Card Scroll Animation */
+
+/* Ensure the section allows scrolling to trigger the effect */
+
+.partner-card {
+    /* Existing styles... */
+    min-height: 80vh;
+    /* Make sure it's tall enough to look substantial */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Start from top, but we'll center logo initially */
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.partner-logo {
+    margin-top: auto;
+    margin-bottom: auto;
+    /* Centered vertically */
+    transform: scale(2);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.partner-desc,
+.partner-badge,
+.partner-pattern {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Scrolled / Active State */
+.partners-section.scrolled .partner-card {
+    /* Card might shift or just content moves */
+}
+
+.partners-section.scrolled .partner-logo {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    transform: scale(1);
+}
+
+.partners-section.scrolled .partner-desc,
+.partners-section.scrolled .partner-badge,
+.partners-section.scrolled .partner-pattern {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add delays for stagger effect */
+.partners-section.scrolled .partner-desc {
+    transition-delay: 0.2s;
+}
+
+.partners-section.scrolled .partner-badge {
+    transition-delay: 0.1s;
+}
+
+.partners-section.scrolled .partner-pattern {
+    transition-delay: 0.3s;
+}
+
+/* Contact Page Styles */
+
+/* Join / Careers Section */
+.join-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    gap: 4rem;
+}
+
+.join-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.join-content .badge {
+    background: rgba(74, 222, 128, 0.2);
+    color: #10B981;
+    border: none;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.join-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #111827;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.join-desc {
+    font-size: 1.125rem;
+    color: #4B5563;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    font-style: italic;
+    /* "It's Your Time To Shine..." seems slightly italic or just distinctive font */
+    font-weight: 500;
+}
+
+.join-btn-link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: #111827;
+    font-size: 1.1rem;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.join-btn-link .icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #E5E7EB;
+    /* Light gray initially */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #111827;
+    background: linear-gradient(135deg, #CCFBF1, #D1FAE5);
+    /* Light teal/green */
+}
+
+.join-btn-link:hover .icon-circle {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.join-image-container {
+    flex: 1;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 4px;
+    /* Image seems to have sharp or slightly rounded corners */
+}
+
+.career-join-img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.join-image-container:hover .career-join-img {
+    transform: scale(1.05);
+}
+
+/* Contact Section Dark - Updated */
+.contact-section-dark {
+    padding: 2rem;
+    /* reduced outer padding */
+    background: transparent;
+}
+
+.contact-card-dark {
+    background: black;
+    color: white;
+    border-radius: 40px;
+    padding: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Left Column */
+.section-label {
+    font-size: 0.9rem;
+    color: #9CA3AF;
+    margin-bottom: 1rem;
+    display: block;
+    font-weight: 500;
+}
+
+.contact-heading {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.contact-subtext {
+    color: #9CA3AF;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 400px;
+    font-size: 0.95rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-label {
+    font-size: 0.85rem;
+    color: #6B7280;
+}
+
+.detail-value {
+    font-size: 1.1rem;
+    color: #E2E8F0;
+    font-weight: 500;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:hover {
+    background: white;
+    color: black;
+}
+
+/* Right Column: Form */
+.contact-form-container {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 2rem;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #374151;
+    padding: 1rem 0;
+    color: white;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #4ADE80;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #6B7280;
+}
+
+.input-arrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6B7280;
+    font-size: 1.2rem;
+    pointer-events: none;
+    border: 1px solid #6B7280;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+/* Submit Button */
+.submit-btn {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: transparent;
+    border: 1px solid #374151;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    border-color: #4ADE80;
+    color: #4ADE80;
+}
+
+/* Large Faded Text */
+.large-footer-text {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.05);
+    /* Very faint */
+    text-align: right;
+    margin-top: auto;
+    /* Push to bottom */
+    padding-top: 3rem;
+}
+
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-form-container {
+        padding-top: 0;
+    }
+
+    .large-footer-text {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - What We Offer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-container">
+        <!-- Reusing particle canvas but might want less chaos here. 
+             We can reuse the same script or make a simpler bg. 
+             For consistency, let's keep the particles. -->
+        <canvas id="particle-canvas"></canvas>
+    </div>
+
+    <header class="navbar">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="logo-icon">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="url(#paint0_linear)" stroke="none" />
+                <defs>
+                    <linearGradient id="paint0_linear" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4ADE80" />
+                        <stop offset="1" stop-color="#22D3EE" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span>STACKLY</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="expertise.html" class="nav-item">Our Expertise</a>
+            <a href="#" class="nav-item active">What We Do</a>
+            <a href="projects.html" class="nav-item">What Defines Us</a>
+            <a href="careers.html" class="nav-item">Careers</a>
+            <a href="partners.html" class="nav-item">Our Partner</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <button class="menu-btn" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="8" width="16" height="2" fill="white" />
+                <rect x="4" y="14" width="10" height="2" fill="white" />
+            </svg>
+        </button>
+    </header>
+
+    <main class="services-section">
+        <div class="services-container">
+            <!-- Left Side: Navigation List -->
+            <div class="services-list">
+                <div class="service-item" data-title="Branding Design"
+                    data-desc="Building unique identities that resonate with your audience and define your brand's presence in the market.">
+                    BRANDING DESIGN</div>
+                <div class="service-item" data-title="Data Analyst"
+                    data-desc="Transforming raw data into actionable insights to drive strategic business growth and decision making.">
+                    DATA ANALYST</div>
+                <div class="service-item active" data-title="UI UX Design"
+                    data-desc="This our work of excellence that reflect the Trust, Modern and Premium in purpose, join to make an impact.">
+                    <span class="bracket top-left"></span>
+                    <span class="bracket bottom-right"></span>
+                    UI UX DESIGN
+                </div>
+                <div class="service-item" data-title="Web Development"
+                    data-desc="Robust, scalable, and secure web solutions tailored to meet your specific business needs and goals.">
+                    WEB DEVELOPMENT</div>
+                <div class="service-item" data-title="Digital Marketing"
+                    data-desc="Strategic campaigns designed to elevate your brand presence online, engage customers, and drive conversions.">
+                    DIGITAL MARKETING</div>
+            </div>
+
+            <!-- Right Side: Content -->
+            <div class="service-details">
+                <span class="badge">Our Specialize</span>
+                <h1 class="details-title">What We Offer</h1>
+                <p class="details-text">
+                    This our work of excellence that reflect the Trust, Modern and Premium in purpose, join to make an
+                    impact.
+                </p>
+
+                <div class="action-buttons">
+                    <a href="#" class="btn-pill">View all</a>
+                    <a href="#" class="btn-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Script to handle selection click and content update
+        const items = document.querySelectorAll('.service-item');
+        const titleEl = document.querySelector('.details-title');
+        const descEl = document.querySelector('.details-text');
+
+        // Add transition style to text elements
+        titleEl.style.transition = "opacity 0.2s ease";
+        descEl.style.transition = "opacity 0.2s ease";
+
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                // If already active, do nothing
+                if (item.classList.contains('active')) return;
+
+                const currentActive = document.querySelector('.service-item.active');
+                if (currentActive) currentActive.classList.remove('active');
+
+                // Add active state to clicked
+                item.classList.add('active');
+
+                // Move Brackets Logic
+                document.querySelectorAll('.bracket').forEach(b => b.remove());
+
+                // Create and append new brackets to the clicked item
+                const b1 = document.createElement('span');
+                b1.classList.add('bracket', 'top-left');
+                const b2 = document.createElement('span');
+                b2.classList.add('bracket', 'bottom-right');
+                item.appendChild(b1);
+                item.appendChild(b2);
+
+                // Update Content (fallback to text if attribute is missing to avoid empty)
+                const title = item.getAttribute('data-title') || item.textContent;
+                const desc = item.getAttribute('data-desc') || "";
+
+                // Animate content change
+                titleEl.style.opacity = 0;
+                descEl.style.opacity = 0;
+
+                setTimeout(() => {
+                    titleEl.textContent = title;
+                    descEl.textContent = desc;
+                    titleEl.style.opacity = 1;
+                    descEl.style.opacity = 1;
+                }, 200);
+            });
+        });
+    </script>
+</body>
+
+</html>

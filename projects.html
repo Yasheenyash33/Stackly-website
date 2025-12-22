@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Projects</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-container">
+        <canvas id="particle-canvas"></canvas>
+    </div>
+
+    <header class="navbar">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="logo-icon">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="url(#paint0_linear)" stroke="none" />
+                <defs>
+                    <linearGradient id="paint0_linear" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4ADE80" />
+                        <stop offset="1" stop-color="#22D3EE" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span>STACKLY</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="expertise.html" class="nav-item">Our Expertise</a>
+            <a href="services.html" class="nav-item">What We Do</a>
+            <a href="projects.html" class="nav-item active">What Defines Us</a>
+            <!-- Linking here as requested 4th page -->
+            <a href="careers.html" class="nav-item">Careers</a>
+            <a href="partners.html" class="nav-item">Our Partner</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <button class="menu-btn" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="8" width="16" height="2" fill="white" />
+                <rect x="4" y="14" width="10" height="2" fill="white" />
+            </svg>
+        </button>
+    </header>
+
+    <main class="projects-section">
+        <!-- Dot Patterns -->
+        <div class="dot-pattern left-pattern">
+            <svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="diamond-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <rect x="8" y="8" width="4" height="4" transform="rotate(45 10 10)" fill="#22D3EE"
+                            fill-opacity="0.8" />
+                    </pattern>
+                </defs>
+                <g class="diamonds-left">
+                </g>
+            </svg>
+        </div>
+
+        <div class="dot-pattern right-pattern">
+            <svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g class="diamonds-right"></g>
+            </svg>
+        </div>
+
+        <div class="projects-content">
+            <h1 class="projects-title">Stackly projects</h1>
+            <div class="play-button" id="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5V19L19 12L8 5Z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Video Overlay -->
+        <div class="video-overlay" id="video-overlay">
+            <button class="close-video-btn" id="close-video-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="video-container">
+                <video id="project-video" controls>
+                    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                        type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Generate diamond patterns
+        // Left pattern: Bottom-Left triangle
+        const leftContainer = document.querySelector('.diamonds-left');
+        const rightContainer = document.querySelector('.diamonds-right');
+
+        function createDiamond(x, y, opacity) {
+            const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+            rect.setAttribute("x", x);
+            rect.setAttribute("y", y);
+            rect.setAttribute("width", "6"); // slightly larger for visibility
+            rect.setAttribute("height", "6");
+            rect.setAttribute("transform", `rotate(45 ${x + 3} ${y + 3})`);
+            rect.setAttribute("fill", "#22D3EE");
+            rect.setAttribute("fill-opacity", opacity);
+            return rect;
+        }
+
+        // Left Pattern Generation (Triangle tapering up and right)
+        // Rows from bottom up
+        for (let row = 0; row < 10; row++) {
+            for (let col = 0; col < (10 - row * 0.8); col++) { // Tapering
+                const x = col * 25 + (row * 12);
+                const y = 180 - (row * 20);
+                const opacity = Math.max(0.1, 1 - (col * 0.15) - (row * 0.1));
+                leftContainer.appendChild(createDiamond(x, y, opacity));
+            }
+        }
+
+        // Right Pattern Generation (Triangle tapering left)
+        for (let row = 0; row < 10; row++) {
+            for (let col = 0; col < (10 - row * 0.5); col++) {
+                const x = 380 - (col * 25) - (row * 12);
+                const y = 100 + (row * 20); // Starting from middle-ish down? Image shows it middle-right.
+                // Let's adjust y to match image: roughly vertically centered block
+                const adjustedY = (row * 20);
+                const opacity = Math.max(0.1, 1 - (col * 0.15) - (row * 0.1));
+                rightContainer.appendChild(createDiamond(x, adjustedY, opacity));
+            }
+        }
+
+        // Video Player Logic
+        const playBtn = document.getElementById('play-btn');
+        const closeBtn = document.getElementById('close-video-btn');
+        const overlay = document.getElementById('video-overlay');
+        const video = document.getElementById('project-video');
+
+        playBtn.addEventListener('click', () => {
+            overlay.classList.add('active');
+            video.currentTime = 0;
+            video.play();
+        });
+
+        const closeVideo = () => {
+            overlay.classList.remove('active');
+            video.pause();
+        };
+
+        closeBtn.addEventListener('click', closeVideo);
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                closeVideo();
+            }
+        });
+
+        // Close on clicking outside video
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                closeVideo();
+            }
+        });
+    </script>
+</body>
+
+</html>

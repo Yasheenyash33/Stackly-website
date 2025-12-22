@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Partners</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light-theme">
+
+    <header class="navbar light-nav">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="logo-icon">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="url(#paint0_linear)" stroke="none" />
+                <defs>
+                    <linearGradient id="paint0_linear" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4ADE80" />
+                        <stop offset="1" stop-color="#22D3EE" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span>STACKLY</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="expertise.html" class="nav-item">Our Expertise</a>
+            <a href="services.html" class="nav-item">What We Do</a>
+            <a href="projects.html" class="nav-item">What Defines Us</a>
+            <a href="careers.html" class="nav-item">Careers</a>
+            <a href="#" class="nav-item active">Our Partner</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <button class="menu-btn" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="8" width="16" height="2" fill="currentColor" />
+                <rect x="4" y="14" width="10" height="2" fill="currentColor" />
+            </svg>
+        </button>
+    </header>
+
+    <main class="partners-section">
+        <div class="partner-card">
+            <div class="partner-badge">Our Partner</div>
+
+            <div class="partner-logo">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 10H50V20H40V50H20V20H10V10Z" fill="url(#logo_gradient)" />
+                    <path d="M25 20H35V40H25V20Z" fill="black" fill-opacity="0.2" />
+                    <!-- Simplified "P" style logo approximation -->
+                    <path d="M30 10 L50 10 L50 30 L40 30 L40 50 L30 50 L30 30 L20 30 L20 10 L30 10"
+                        fill="url(#logo_gradient)" />
+                    <defs>
+                        <linearGradient id="logo_gradient" x1="10" y1="10" x2="50" y2="50"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#fff" />
+                            <stop offset="1" stop-color="#ccc" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="partner-name">PREYFOX LLC</div>
+            </div>
+
+            <p class="partner-desc">
+                Stackly and Preyfox LLC are sister concerns, jointly leading innovation in the IT and ITES industries.
+                While <span class="highlight">Preyfox LLC</span> manages operations in the <span
+                    class="highlight">United States</span>, <span class="highlight">Stackly</span> oversees operations
+                in <span class="highlight">India</span>. Together, they are committed to delivering <span
+                    class="highlight">cutting-edge solutions</span> and driving technological advancements across global
+                markets.
+            </p>
+
+            <div class="partner-pattern top-right">
+                <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+                    <pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <rect width="18" height="18" fill="#ffffff" fill-opacity="0.05" />
+                    </pattern>
+                    <rect width="200" height="200" fill="url(#grid)" />
+                </svg>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const section = document.querySelector('.partners-section');
+            let isScrolled = false;
+
+            // Handle scroll/wheel to trigger animation
+            const handleScroll = (e) => {
+                // If scrolling down or deltaY > 0
+                if (e.deltaY > 0 || window.scrollY > 50) {
+                    if (!isScrolled) {
+                        section.classList.add('scrolled');
+                        isScrolled = true;
+                    }
+                } else if (window.scrollY < 50 && e.deltaY < 0) {
+                    // scrolling up near top
+                    if (isScrolled) {
+                        section.classList.remove('scrolled');
+                        isScrolled = false;
+                    }
+                }
+            };
+
+            window.addEventListener('wheel', handleScroll);
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50 && !isScrolled) {
+                    section.classList.add('scrolled');
+                    isScrolled = true;
+                } else if (window.scrollY <= 50 && isScrolled) {
+                    section.classList.remove('scrolled');
+                    isScrolled = false;
+                }
+            });
+
+            // Allow touch for mobile
+            let touchStartY = 0;
+            window.addEventListener('touchstart', e => touchStartY = e.touches[0].clientY);
+            window.addEventListener('touchmove', e => {
+                const touchEndY = e.touches[0].clientY;
+                if (touchStartY - touchEndY > 50) { // Swipe up / scroll down
+                    section.classList.add('scrolled');
+                    isScrolled = true;
+                } else if (touchEndY - touchStartY > 50 && window.scrollY <= 10) {
+                    section.classList.remove('scrolled');
+                    isScrolled = false;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

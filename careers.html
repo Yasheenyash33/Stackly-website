@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Careers</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light-theme">
+
+    <header class="navbar light-nav">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="logo-icon">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="url(#paint0_linear)" stroke="none" />
+                <defs>
+                    <linearGradient id="paint0_linear" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4ADE80" />
+                        <stop offset="1" stop-color="#22D3EE" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span>STACKLY</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="expertise.html" class="nav-item">Our Expertise</a>
+            <a href="services.html" class="nav-item">What We Do</a>
+            <a href="projects.html" class="nav-item">What Defines Us</a>
+            <a href="#" class="nav-item active">Careers</a>
+            <a href="partners.html" class="nav-item">Our Partner</a>
+            <a href="contact.html" class="nav-item">Contact</a>
+        </nav>
+
+        <button class="menu-btn" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="8" width="16" height="2" fill="currentColor" />
+                <rect x="4" y="14" width="10" height="2" fill="currentColor" />
+            </svg>
+        </button>
+    </header>
+
+    <main class="careers-section">
+        <div class="careers-header">
+            <span class="badge">Our Expertise</span>
+            <h1 class="section-title">The Ultimate Guide To Marketing Success.</h1>
+        </div>
+
+        <div class="showcase-slider">
+            <!-- Card 1 -->
+            <div class="showcase-card active" data-index="0">
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="card-number">01</span>
+                        <h2 class="card-title">Web Application</h2>
+                    </div>
+                    <p class="card-desc">
+                        This our work of excellence that reflect the Trust, Modern and Premium in purpose, join to make
+                        an impact.
+                    </p>
+                    <div class="card-visual">
+                        <div class="tablet-frame">
+                            <div class="screen-content">
+                                <div class="screen-layout">
+                                    <div class="screen-logo">*</div>
+                                    <h3 class="screen-title">The Art<br>— Exhibit</h3>
+                                    <div class="screen-btn-fake"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-pill small">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="showcase-card" data-index="1">
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="card-number">02</span>
+                        <h2 class="card-title">Mobile App</h2>
+                    </div>
+                    <p class="card-desc">
+                        Creating seamless mobile experiences that connect users with brands on the go.
+                    </p>
+                    <div class="card-visual">
+                        <!-- Placeholder visual for 2 -->
+                        <div class="tablet-frame" style="background: #2D3748;">
+                            <div class="screen-content"
+                                style="background: radial-gradient(circle at center, #4a5568, #1a202c);">
+                                <h3 class="screen-title" style="font-size: 2rem;">Next Gen<br>Mobile</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="showcase-card" data-index="2">
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="card-number">03</span>
+                        <h2 class="card-title">Cloud Solutions</h2>
+                    </div>
+                    <p class="card-desc">
+                        Scalable cloud infrastructure designed for reliability and performance.
+                    </p>
+                    <div class="card-visual">
+                        <div class="tablet-frame" style="background: #1A202C;">
+                            <div class="screen-content"
+                                style="background: linear-gradient(135deg, #22D3EE 0%, #000 100%);">
+                                <h3 class="screen-title" style="font-size: 2rem;">Cloud<br>Native</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="showcase-card" data-index="3">
+                <div class="card-content">
+                    <div class="card-header">
+                        <span class="card-number">04</span>
+                        <h2 class="card-title">Data Analytics</h2>
+                    </div>
+                    <p class="card-desc">
+                        Unlock the power of your data with advanced analytics and visualization.
+                    </p>
+                    <div class="card-visual">
+                        <div class="tablet-frame" style="background: #000;">
+                            <div class="screen-content"
+                                style="background: linear-gradient(to bottom, #4ADE80, #064E3B);">
+                                <h3 class="screen-title" style="font-size: 2rem;">Data<br>Driven</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.showcase-card');
+            let currentIndex = 0;
+            let direction = 1; // 1 for ascending, -1 for descending
+
+            function updateCards() {
+                cards.forEach((card, index) => {
+                    // Reset classes
+                    card.className = 'showcase-card';
+
+                    if (index === currentIndex) {
+                        card.classList.add('visible');
+                        card.style.zIndex = 10 + index; // Ensure top one is highest
+                    } else if (index < currentIndex) {
+                        // These are below the current one
+                        card.classList.add('visible');
+                        // Add depth classes based on how far back they are
+                        const distance = currentIndex - index;
+                        if (distance === 1) card.classList.add('below');
+                        if (distance >= 2) card.classList.add('below-2');
+
+                        card.style.zIndex = 10 + index;
+                    } else {
+                        // Ahead (hidden)
+                        // Default style is hidden
+                    }
+                });
+            }
+
+            // Initial state
+            updateCards();
+
+            // Click handler for the container or top card
+            // Since top card covers others, we can add listener to each card
+            // If it's the top card (currentIndex), we trigger next step
+
+            cards.forEach((card) => {
+                card.addEventListener('click', () => {
+                    const index = parseInt(card.getAttribute('data-index'));
+
+                    if (index === currentIndex) {
+                        // User clicked the top card.
+
+                        // Ascending logic
+                        if (direction === 1) {
+                            if (currentIndex < cards.length - 1) {
+                                currentIndex++;
+                                updateCards();
+                            } else {
+                                // Reached the top, switch to descending
+                                direction = -1;
+                                // Immediately trigger first step of descending?
+                                // "if the image over again it will desending order"
+                                // So click Card 4 -> Card 4 slides away? 
+                                // Or next click on Card 4 does it?
+                                // Let's simplify: Click Card 4 -> Switch direction and do nothing visible yet, OR start unstacking?
+                                // "if the image over again" -> sounds like after the last one comes.
+                                // Let's unstack immediately on the next click. 
+                                // But this click WAS the one that filled the stack?
+                                // No, this logic runs when we click the *current* active card.
+                                // If card 4 is active (index 3), and we click it -> Unstack.
+                                currentIndex--;
+                                updateCards();
+                            }
+                        } else {
+                            // Descending logic
+                            if (currentIndex > 0) {
+                                currentIndex--;
+                                updateCards();
+                            } else {
+                                // Reached bottom (Card 1). Switch back to ascending
+                                direction = 1;
+                                currentIndex++;
+                                updateCards();
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
