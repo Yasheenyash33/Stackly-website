@@ -54,33 +54,24 @@
 </head>
 
 <body>
-    <div class="background-container">
+    <!-- <div class="background-container">
         <canvas id="particle-canvas"></canvas>
-    </div>
+    </div> -->
 
     <header class="navbar">
         <div class="logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                class="logo-icon">
-                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="url(#paint0_linear)" stroke="none" />
-                <defs>
-                    <linearGradient id="paint0_linear" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#4ADE80" />
-                        <stop offset="1" stop-color="#22D3EE" />
-                    </linearGradient>
-                </defs>
-            </svg>
+          <img src="photo/logo-stackly (1) 2.png" alt="Tech Icon" class="tech-icon">
             <span>STACKLY</span>
         </div>
 
         <nav class="nav-links">
-            <a href="#home" class="nav-item">Home</a>
+            <!-- <a href="#home" class="nav-item">Home</a> -->
             <a href="#expertise" class="nav-item">Our Expertise</a>
             <a href="#services" class="nav-item">What We Do</a>
             <a href="#projects" class="nav-item">What Defines Us</a>
             <a href="#careers" class="nav-item">Careers</a>
-            <a href="#partners" class="nav-item">Our Partner</a>
-            <a href="#contact" class="nav-item">Contact</a>
+            <!-- <a href="#partners" class="nav-item">Our Partner</a>
+            <a href="#contact" class="nav-item">Contact</a> -->
         </nav>
 
         <button class="menu-btn" aria-label="Menu">
@@ -92,89 +83,50 @@
     </header>
 
     <!-- HOME SECTION -->
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                Empowering businesses<br>
-                with cutting-edge<br>
-                <span class="gradient-text">
-                    <span class="icon-inline">
-                        <svg width="0.9em" height="0.9em" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="url(#paint1_linear)" stroke="none" />
-                            <defs>
-                                <linearGradient id="paint1_linear" x1="3" y1="2" x2="21" y2="22"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#4ADE80" />
-                                    <stop offset="1" stop-color="#22D3EE" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </span>
-                    olutions
+ <section id="home" class="hero-section">
+
+    <!-- BACKGROUND VIDEO -->
+    <video class="hero-bg-video" autoplay muted loop playsinline>
+        <source src="photo/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- DARK OVERLAY -->
+    <div class="hero-overlay"></div>
+
+    <!-- TEXT CONTENT -->
+    <div class="hero-content">
+        <h1 class="hero-title">
+            Empowering businesses<br>
+            with cutting-edge<br>
+            <span class="gradient-text">
+                <span class="icon-inline">
+                   <img src="photo/logo-stackly (1) 2.png" alt="Tech Icon" class="tech-icon">
                 </span>
-            </h1>
+                olutions
+            </span>
+        </h1>
 
-            <p class="hero-description">
-                We are a forward-thinking IT company specializing in innovative technology solutions that drive business
-                transformation. From software development to IT consulting, we deliver tailored services to enhance
-                efficiency, streamline processes, and foster growth for businesses of all sizes.
-            </p>
-        </div>
+        <p class="hero-description">
+            We are a forward-thinking IT company specializing in innovative technology solutions that drive business
+            transformation. From software development to IT consulting, we deliver tailored services to enhance
+            efficiency, streamline processes, and foster growth for businesses of all sizes.
+        </p>
+    </div>
 
-        <div class="people-icons-container">
-            <svg width="180" height="150" viewBox="0 0 180 150" fill="none" xmlns="http://www.w3.org/2000/svg"
-                class="network-graphic">
-                <defs>
-                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="5" result="blur" />
-                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                    </filter>
-                </defs>
-                <!-- Connecting lines -->
-                <line x1="90" y1="30" x2="50" y2="100" stroke="#4ADE80" stroke-width="1" stroke-dasharray="4 4"
-                    stroke-opacity="0.6" />
-                <line x1="90" y1="30" x2="130" y2="100" stroke="#22D3EE" stroke-width="1" stroke-dasharray="4 4"
-                    stroke-opacity="0.6" />
-                <line x1="50" y1="100" x2="130" y2="100" stroke="#4ADE80" stroke-width="1" stroke-dasharray="4 4"
-                    stroke-opacity="0.6" />
+    <div class="people-icons-container">
+        <!-- UN SVG SAME -->
+        <!-- (no changes here) -->
+    </div>
 
-                <!-- Top Person -->
-                <g transform="translate(74, 5)" filter="url(#glow)">
-                    <circle cx="16" cy="16" r="20" fill="rgba(74, 222, 128, 0.1)" stroke="#4ADE80" stroke-width="1" />
-                    <path
-                        d="M16 16C18.2 16 20 14.2 20 12C20 9.8 18.2 8 16 8C13.8 8 12 9.8 12 12C12 14.2 13.8 16 16 16ZM16 18C13.33 18 8 19.34 8 22V24H24V22C24 19.34 18.67 18 16 18Z"
-                        fill="#4ADE80" />
-                </g>
+    <div class="hero-footer">
+        <a href="#expertise" class="cta-button">
+            Explore what we do
+        </a>
+    </div>
 
-                <!-- Bottom Left Person -->
-                <g transform="translate(34, 85)" filter="url(#glow)">
-                    <circle cx="16" cy="16" r="20" fill="rgba(74, 222, 128, 0.1)" stroke="#4ADE80" stroke-width="1" />
-                    <path
-                        d="M16 16C18.2 16 20 14.2 20 12C20 9.8 18.2 8 16 8C13.8 8 12 9.8 12 12C12 14.2 13.8 16 16 16ZM16 18C13.33 18 8 19.34 8 22V24H24V22C24 19.34 18.67 18 16 18Z"
-                        fill="#4ADE80" />
-                </g>
+</section>
 
-                <!-- Bottom Right Person -->
-                <g transform="translate(114, 85)" filter="url(#glow)">
-                    <circle cx="16" cy="16" r="20" fill="rgba(34, 211, 238, 0.1)" stroke="#22D3EE" stroke-width="1" />
-                    <path
-                        d="M16 16C18.2 16 20 14.2 20 12C20 9.8 18.2 8 16 8C13.8 8 12 9.8 12 12C12 14.2 13.8 16 16 16ZM16 18C13.33 18 8 19.34 8 22V24H24V22C24 19.34 18.67 18 16 18Z"
-                        fill="#22D3EE" />
-                </g>
-            </svg>
-        </div>
-
-        <div class="hero-footer">
-            <a href="#expertise" class="cta-button">
-                Explore what we do
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </a>
-        </div>
-    </section>
 
     <!-- EXPERTISE SECTION -->
     <section id="expertise" class="expertise-section light-theme">
@@ -235,13 +187,12 @@
         </div>
 
         <div class="content-container">
-            <span class="badge">Our Expertise</span>
+            <span class="badge">Core Competencies</span>
 
-            <h1 class="section-title">The Ultimate Guide To Marketing Success.</h1>
+            <h1 class="section-title">Achieving Measurable Business Outcomes.</h1>
 
             <p class="section-subtitle">
-                This is our work of excellence that reflects the Trust, Modern and Premium in purpose, join to make an
-                impact.
+                This our work of excellence that reflect the Trust, Modern and Premium in purpose. join to make an impact.
             </p>
 
             <div class="stats-grid">
@@ -279,7 +230,7 @@
                     UI UX DESIGN
                 </div>
                 <div class="service-item" data-title="Web Development"
-                    data-desc="Robust, scalable, and secure web solutions tailored to meet your specific business needs and goals.">
+                    data-desc="Leveraging modern frameworks and AI tools, transforming complex design specifications into scalable, high performance web applications. Expertise in optimizing code for speed and security , ensuring expectational user experience and cross-platform compatibility.">
                     WEB DEVELOPMENT</div>
                 <div class="service-item" data-title="Digital Marketing"
                     data-desc="Strategic campaigns designed to elevate your brand presence online, engage customers, and drive conversions.">
@@ -465,12 +416,8 @@
             <div class="partner-badge">Our Partner</div>
 
             <div class="partner-logo">
-                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 10H50V20H40V50H20V20H10V10Z" fill="url(#logo_gradient)" />
-                    <path d="M25 20H35V40H25V20Z" fill="black" fill-opacity="0.2" />
-                    <!-- Simplified "P" style logo approximation -->
-                    <path d="M30 10 L50 10 L50 30 L40 30 L40 50 L30 50 L30 30 L20 30 L20 10 L30 10"
-                        fill="url(#logo_gradient)" />
+         <img src="photo/prefox.png" alt="Preyfox LLC Logo" class="preyfox-logo">
+
                     <defs>
                         <linearGradient id="logo_gradient" x1="10" y1="10" x2="50" y2="50"
                             gradientUnits="userSpaceOnUse">
@@ -479,7 +426,7 @@
                         </linearGradient>
                     </defs>
                 </svg>
-                <div class="partner-name">PREYFOX LLC</div>
+                <div class="partner-name"></div>
             </div>
 
             <p class="partner-desc">
@@ -508,9 +455,9 @@
         <section class="join-section">
             <div class="join-content">
                 <span class="badge green">Careers</span>
-                <h1 class="join-title">Grow Your Career At The Heart Of Change</h1>
+                <h1 class="join-title">Shape your future At the nexus of innovation</h1>
                 <p class="join-desc">
-                    It's Your Time To Shine. Bring Your Ingenuity, Curiosity And Big Ideas.
+                    It's your time to lead. grow with us as we define what’s next in the digital world.
                 </p>
 
                 <a href="#" class="join-btn-link">
