@@ -2097,7 +2097,7 @@
   }
 
   .thick {
-    font-size: 55px;
+    font-size: 36px;
     letter-spacing: 5px;
     margin: 0 40px;
   }
@@ -2139,12 +2139,20 @@
   }
 
   .thick {
-    font-size: 30px;
+    font-size: 28px;
     letter-spacing: 3px;
     margin: 0;
   }
 }
 
+@media (max-width: 568px) {
+
+.thick {
+    font-size: 22px;
+    letter-spacing: 2px;
+    padding: 0 20px;
+  }
+}
 /* =========================
    SMALL MOBILE (480px & below)
 ========================= */
@@ -2164,12 +2172,20 @@
   }
 
   .thick {
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 2px;
     padding: 0 20px;
   }
 }
 
+@media (max-width: 390px) {
+
+ .thick {
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 0 0px;
+  }
+}
 /*carrer2 page*/
 @media (max-width: 1024px) {
   .menu-top {
