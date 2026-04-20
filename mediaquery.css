@@ -196,9 +196,7 @@
   }
 }
 @media (max-width: 400px) {
-  .tech-icon {
-    /* width: 120px; */
-  }
+
 }
 
 /* hero section */
@@ -1068,62 +1066,108 @@
 }
 
 /* what we do */
-/* ================= TABLET ================= */
-@media (max-width: 1024px) {
-
+/* ================== LARGE SCREENS (1400px+) ================== */
+@media (min-width: 1400px) {
   .hero-content1 h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
   }
 
   .hero-description1 {
-    font-size: 18px;
-  }
-
-  .hero-service1 {
-    flex-direction: column;
-    padding: 60px 40px;
-  }
-
-  .service2 {
-    max-width: 100%;
-  }
-}
-
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-
-  .hero-content1 {
-    padding: 0 20px;
-    margin-top: 40px;
-  }
-
-  .hero-content1 h1 {
-    font-size: 2rem;
-    line-height: 1.3;
-  }
-
-  .hero-description1 {
-    font-size: 16px;
-  }
-
-  .hero-service1 {
-    flex-direction: column;
-    padding: 40px 20px;
-    gap: 30px;
-  }
-
-  .service1 h1 {
-    font-size: 18px;
-  }
-
-  .service2 p {
-    font-size: 14px;
-    text-align: left;
+    font-size: 26px;
   }
 
   .service-details p {
     font-size: 20px;
+  }
+}
+
+/* ================== LAPTOP (1024px - 1399px) ================== */
+@media (max-width: 1399px) {
+  .hero-content1 {
+    padding: 0 2rem;
+  }
+
+  .hero-content1 h1 {
+    font-size: 3rem;
+  }
+
+  .hero-description1 {
+    font-size: 20px;
+  }
+
+  .hero-service1 {
+    padding: 60px;
+  }
+}
+
+/* ================== TABLET (768px - 1023px) ================== */
+@media (max-width: 1023px) {
+  .hero-content1 {
+    margin-top: 50px;
+    padding: 0 1.5rem;
+  }
+
+  .hero-content1 h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-description1 {
+    font-size: 18px;
+  }
+
+  .hero-service1 {
+    flex-direction: column;
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .service1 h1 {
+    font-size: 1.5rem;
+  }
+
+  .service-details p {
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+/* ================== MOBILE (480px - 767px) ================== */
+@media (max-width: 767px) {
+  .hero-content1 {
+    margin-top: 40px;
+    padding: 0 1rem;
+  }
+
+  .hero-content1 h1 {
+    font-size: 2rem;
+  }
+
+  .hero-description1 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .hero-service1 {
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .service1 {
+    gap: 8px;
+  }
+
+  .service1 svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .service1 h1 {
+    font-size: 1.3rem;
+  }
+
+  .service-details p {
+    font-size: 15px;
   }
 
   .btn-primary {
@@ -1131,10 +1175,8 @@
   }
 }
 
-
-/* ================= SMALL MOBILE ================= */
-@media (max-width: 480px) {
-
+/* ================== SMALL MOBILE (<480px) ================== */
+@media (max-width: 479px) {
   .hero-content1 h1 {
     font-size: 1.6rem;
   }
@@ -1143,20 +1185,22 @@
     font-size: 14px;
   }
 
-  .service2 p {
-    font-size: 14px;
-  }
-
   .hero-service1 {
-    padding: 30px 15px;
+    padding: 20px 15px;
   }
 
-  /* glow reduce */
-  .hero-section1::before,
-  .hero-section1::after {
-    width: 300px;
-    height: 300px;
-    filter: blur(120px);
+  .service-details p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .hero-button {
+    gap: 5px;
+  }
+
+  .hero-button svg {
+    width: 14px;
+    height: 14px;
   }
 }
 
