@@ -460,7 +460,7 @@
 
 @media (max-width: 1024px) {
   .services-section {
-    padding: 0 2rem;
+    padding: 4rem 2rem;
   }
 
   .services-container {
@@ -516,7 +516,8 @@
 }
 @media (max-width: 480px) {
   .services-section {
-    padding: 0 1rem;
+    padding: 4rem 20px;
+    overflow: hidden;
   }
 
   .service-item {
@@ -738,7 +739,7 @@
 /* Mobile */
 @media (max-width: 768px) {
   .partners-section {
-    padding: 5rem 1rem 0rem 1rem;
+    padding: 4rem 0;
   }
 
   .partner-card {
