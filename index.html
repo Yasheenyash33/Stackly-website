@@ -61,36 +61,12 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #111111;
+        background-color: hsl(0, 0%, 100%);
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 9999;
         overflow: hidden;
-      }
-
-      .loader {
-        font-size: 48px;
-        font-weight: 600;
-        display: inline-block;
-        letter-spacing: 2px;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #fff;
-        box-sizing: border-box;
-        animation: spotlight 2s linear infinite alternate;
-      }
-
-      @keyframes spotlight {
-        0%,
-        20% {
-          opacity: 1;
-          letter-spacing: 2px;
-        }
-        80%,
-        100% {
-          opacity: 0;
-          letter-spacing: 32px;
-        }
       }
 
       /* Hide loader smoothly */
@@ -112,7 +88,91 @@
     </style>
 
     <style>
+      .loader-text {
+        font-size: 44px;
+        font-weight: 600;
+        letter-spacing: 6px;
+        color: #6aaba3;
+        display: flex;
+      }
 
+      /* letters */
+      .loader-text span {
+        opacity: 0;
+        transform: translateY(12px);
+        animation: smoothReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+
+      /* perfect stagger timing */
+      .loader-text span:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      .loader-text span:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .loader-text span:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      .loader-text span:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+      .loader-text span:nth-child(5) {
+        animation-delay: 0.25s;
+      }
+      .loader-text span:nth-child(6) {
+        animation-delay: 0.3s;
+      }
+      .loader-text span:nth-child(7) {
+        animation-delay: 0.35s;
+      }
+
+      @keyframes smoothReveal {
+        0% {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        60% {
+          opacity: 1;
+          transform: translateY(-2px); /* small bounce */
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .loader-text.exit span {
+        animation: exit 0.4s ease forwards;
+      }
+
+      .loader-text.exit span:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .loader-text.exit span:nth-child(2) {
+        animation-delay: 0.03s;
+      }
+      .loader-text.exit span:nth-child(3) {
+        animation-delay: 0.06s;
+      }
+      .loader-text.exit span:nth-child(4) {
+        animation-delay: 0.09s;
+      }
+      .loader-text.exit span:nth-child(5) {
+        animation-delay: 0.12s;
+      }
+      .loader-text.exit span:nth-child(6) {
+        animation-delay: 0.15s;
+      }
+      .loader-text.exit span:nth-child(7) {
+        animation-delay: 0.18s;
+      }
+
+      @keyframes exit {
+        to {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+      }
     </style>
 
     <!-- CURSOR STYLE -->
@@ -153,9 +213,10 @@
 
     <!-- LOADER -->
     <section class="loader-section">
-      <div id="loader">
-        <span class="loader">STACKLY</span>
-      </div>
+      <h1 class="loader-text">
+        <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span
+        ><span>L</span><span>Y</span>
+      </h1>
     </section>
 
     <!-- SITE CONTENT -->
@@ -301,7 +362,7 @@
           <div class="hero-content">
             <h1
               data-aos="zoom-in-up"
-              data-aos-duration="1500"
+              data-aos-duration="3000"
               class="hero-title"
             >
               Empowering businesses<br />
@@ -319,8 +380,8 @@
             </h1>
 
             <p
-              data-aos="fade-up"
-              data-aos-duration="2000"
+              data-aos="zoom-in-up"
+              data-aos-duration="3000"
               class="hero-description"
             >
               We are a forward-thinking IT company specializing in innovative
@@ -331,7 +392,7 @@
             </p>
             <div
               data-aos="fade-up"
-              data-aos-duration="2500"
+              data-aos-duration="500"
               class="hero-footer"
             >
               <a href="./errorpage.html" class="cta-button">
@@ -1073,6 +1134,12 @@
       window.addEventListener("load", () => {
         const loaderSection = document.querySelector(".loader-section");
         const siteContent = document.querySelector(".siteContent");
+
+        const text = document.querySelector(".loader-text");
+
+        setTimeout(() => {
+          text.classList.add("exit");
+        }, 2000);
 
         setTimeout(() => {
           // Fade out loader

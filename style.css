@@ -353,7 +353,7 @@ body {
 
   /* ANIMATION */
   animation: rotateToZero 1.2s ease-in-out forwards;
-  animation-delay: 2s; /* 🔥 2 sec delay */
+  animation-delay: 4s; /* 🔥 2 sec delay */
 }
 
 /* 🔥 ROTATE -45deg → 0deg */

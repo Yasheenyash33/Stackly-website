@@ -30,12 +30,10 @@
 /* ================== RESPONSIVE ================== */
 
 @media (max-width: 950px) {
-
   .rights-text {
     font-size: 85px;
   }
 }
-
 
 /* Tablet */
 @media (max-width: 768px) {
@@ -50,14 +48,11 @@
   .logo span {
     font-size: 26px;
   }
-  
 }
-.rights-text{
-
+.rights-text {
   font-size: 95px;
 
   font-size: 70px;
-
 }
 
 /* Mobile */
@@ -81,8 +76,6 @@
     flex-direction: column;
     gap: 20px;
   }
-
-  
 
   .footer-bottom {
     flex-direction: column;
@@ -142,7 +135,6 @@
   }
 }
 
-
 /* Small Mobile 375px – 320px */
 @media (max-width: 375px) {
   .logo span {
@@ -196,7 +188,6 @@
   }
 }
 @media (max-width: 400px) {
-
 }
 
 /* hero section */
@@ -501,7 +492,7 @@
   .service-details {
     max-width: 100%;
   }
- 
+
   .details-title {
     font-size: 2.2rem;
   }
@@ -567,7 +558,7 @@
 @media (max-width: 768px) {
   .projects-section {
     height: auto;
-    min-height: 100vh;
+   height: 100vh;
     padding: 4rem 1rem;
   }
 
@@ -603,6 +594,10 @@
   }
 }
 @media (max-width: 480px) {
+  .projects-section {
+    height: 50vh;
+  }
+
   .projects-title {
     font-size: 2rem;
   }
@@ -623,13 +618,10 @@
 }
 /* cards page */
 
-
-
 /* ===============================
    TABLET & MOBILE
    =============================== */
 @media (max-width: 1024px) {
-
   .pinned-expertise {
     height: auto; /* 🔥 REMOVE 400vh */
     padding: 4rem 1.5rem;
@@ -666,7 +658,7 @@
     inset: unset;
     opacity: 1;
     transform: none;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   }
 
   .pin-card.prev {
@@ -675,7 +667,6 @@
   }
 }
 @media (max-width: 576px) {
-
   .pin-header h1 {
     font-size: 1.9rem;
     line-height: 1.2;
@@ -688,30 +679,12 @@
 
   .pin-card h2 {
     font-size: 1.6rem;
-  
   }
 
   .pin-card p {
     font-size: 0.95rem;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* partners page */
 /* Tablet */
@@ -869,12 +842,11 @@
 
   .contact-grid {
     gap: 3rem;
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 @media (max-width: 768px) {
   .contact-grid {
-
     gap: 2.5rem;
   }
 
@@ -1230,14 +1202,12 @@
   }
 }
 
-
-  /* wave cards */
+/* wave cards */
 @media (max-width: 1024px) {
-
   /* reduce card width */
   .content1 {
     width: 200px;
-    flex-direction: column;   /* 🔥 KEY FIX */
+    flex-direction: column; /* 🔥 KEY FIX */
     align-items: center;
     gap: 16px;
     text-align: center;
@@ -1248,7 +1218,6 @@
     width: 90px;
     height: 120px;
   }
-  
 
   /* text should NOT overlap */
   .develop-text {
@@ -1275,7 +1244,6 @@
   }
 }
 @media (max-width: 768px) {
-
   .content1 {
     width: 280px;
     gap: 14px;
@@ -1299,7 +1267,6 @@
   }
 }
 @media (max-width: 480px) {
-
   .content1 {
     width: 240px;
   }
@@ -1316,7 +1283,6 @@
     font-size: 12px;
   }
 }
-
 
 /* methodology */
 
@@ -1575,7 +1541,7 @@
 
 @media (max-width: 768px) {
   .industry-columns > div {
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 16px;
   }
 }
@@ -1851,7 +1817,7 @@
     transform: translateY(0) scale(1);
   }
 }
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
   .approach-head > h1,
   .approach-head > h1 > span {
     font-size: 22px;
@@ -1969,12 +1935,12 @@
     width: 120px;
     height: auto;
   }
-  .manager-topic > h2{
+  .manager-topic > h2 {
     font-size: 38px;
   }
 }
 @media (max-width: 500px) {
- .manager-topic > h2{
+  .manager-topic > h2 {
     font-size: 30px;
   }
 }
@@ -1993,7 +1959,7 @@
   }
 }
 @media (max-width: 420px) {
- .manager-topic > h2{
+  .manager-topic > h2 {
     font-size: 22px;
   }
 }
@@ -2076,7 +2042,6 @@
    TABLET (1024px & below)
 ========================= */
 @media (max-width: 1024px) {
-
   .bg-video-box {
     height: 500px;
   }
@@ -2113,7 +2078,6 @@
    MOBILE (768px & below)
 ========================= */
 @media (max-width: 768px) {
-
   .bg-video-box {
     height: 420px;
   }
@@ -2147,8 +2111,7 @@
 }
 
 @media (max-width: 568px) {
-
-.thick {
+  .thick {
     font-size: 22px;
     letter-spacing: 2px;
     padding: 0 20px;
@@ -2158,7 +2121,6 @@
    SMALL MOBILE (480px & below)
 ========================= */
 @media (max-width: 480px) {
-
   .bg-video-box {
     height: 360px;
   }
@@ -2180,8 +2142,7 @@
 }
 
 @media (max-width: 390px) {
-
- .thick {
+  .thick {
     font-size: 15px;
     letter-spacing: 1px;
     padding: 0 0px;
@@ -2251,14 +2212,12 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, 10px);
-
   }
 
   .menu-item.active .dropdown-box {
     transform: translate(-30%, 0);
   }
 }
-
 
 @media (max-width: 1024px) {
   .career-head-text {
@@ -2308,7 +2267,7 @@
 
   .role-iteams .row.two,
   .role-iteams .row.three {
-    gap: 40px;   /* 🔑 override desktop gap */
+    gap: 40px; /* 🔑 override desktop gap */
   }
 
   .role-iteams span p {
@@ -2371,9 +2330,7 @@
   }
 }
 
-
 /*careeer join*/
-
 
 @media (max-width: 768px) {
   .career-join {
@@ -2387,11 +2344,10 @@
     text-align: center;
     justify-content: center;
   }
-   .career-join2 {
+  .career-join2 {
     justify-content: center;
     flex-direction: column-reverse;
   }
-
 
   .career-join-img {
     width: 100%;
@@ -2420,7 +2376,7 @@
   .career-join-head {
     gap: 40px;
   }
- .career-join2 {
+  .career-join2 {
     justify-content: center;
     flex-direction: column-reverse;
   }
@@ -2438,7 +2394,6 @@
   }
 }
 
-
 /*careers-section*/
 @media (max-width: 1200px) {
   .careers-section1 {
@@ -2455,7 +2410,6 @@
   }
 }
 @media (max-width: 768px) {
-
   .careers-section1 {
     flex-direction: column;
     padding: 40px 24px;
@@ -2492,9 +2446,9 @@
   }
 }
 @media (max-width: 480px) {
-    .career-head1{
-      padding: 0 14px  ;
-    }
+  .career-head1 {
+    padding: 0 14px;
+  }
   .filters-header h3 {
     font-size: 16px;
   }
@@ -2635,7 +2589,7 @@
     margin-bottom: 8px;
   }
 }
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
   .job-hiring {
     padding: 20px 16px;
   }
@@ -2828,7 +2782,6 @@
   }
 }
 
-
 /* Carrer5 page*/
 @media (max-width: 1024px) {
   .form-grid {
@@ -2927,32 +2880,23 @@
   }
 }
 
-
-
-
-@media(max-width:420px){
-  
-  .hero-content1>h1 {
+@media (max-width: 420px) {
+  .hero-content1 > h1 {
     font-size: 28px;
+  }
 }
-}
 
-
-
-@media(max-width:400px){
-  
+@media (max-width: 400px) {
   .hero-content1 > h1 {
     font-size: 24px;
-}
+  }
 }
 
-@media(max-width:360px){
-  
+@media (max-width: 360px) {
   .hero-content1 > h1 {
     font-size: 20px;
+  }
 }
-}
-
 
 /* ERROR PAGE */
 @media (max-width: 1200px) {
@@ -2997,10 +2941,9 @@
 /* svg menu bar */
 @media (max-width: 900px) {
   .bar {
- display: none;
+    display: none;
   }
 }
-
 
 /* career1 background */
 @media (max-width: 768px) {
@@ -3018,7 +2961,6 @@
     font-size: 1.6rem;
   }
 }
-
 
 /* career3 paragraph */
 
