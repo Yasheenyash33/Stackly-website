@@ -31,7 +31,7 @@
 
 @media (max-width: 950px) {
   .rights-text {
-    font-size: 85px;
+    font-size: 36px;
   }
 }
 
@@ -50,9 +50,7 @@
   }
 }
 .rights-text {
-  font-size: 95px;
-
-  font-size: 70px;
+  font-size: 20px;
 }
 
 /* Mobile */
@@ -83,7 +81,7 @@
   }
 
   .rights-text {
-    font-size: 36px;
+    font-size: 16px;
   }
 }
 /*contact*/
@@ -147,7 +145,7 @@
   }
 
   .rights-text {
-    font-size: 28px;
+    font-size: 16px;
   }
 }
 

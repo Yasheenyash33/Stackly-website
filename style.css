@@ -1698,11 +1698,10 @@ body {
 }
 
 .footer-middle {
-  margin-top: 60px;
-  padding-top: 20px;
+  padding-top: 40px;
+  /* padding-top: 20px; */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
-
   justify-content: space-between;
   align-items: center;
 }
@@ -1737,26 +1736,23 @@ body {
 }
 
 .footer-bottom {
-  margin-top: 40px;
+
   display: flex;
 
   justify-content: space-between;
-  /* align-items: center; */
-  font-size: 32px;
 
   justify-content: center;
   align-items: center;
-  font-size: 32px;
+  font-size: 16px;
   gap: 10px;
 }
 
 .rights-text {
-  font-size: 120px;
-
-  font-size: 100px;
+  font-size: 28px;
 
   text-align: center;
   opacity: 0.9;
+  margin-bottom: 30px;
 }
 .footer-reveal {
   clip-path: inset(100% 0 0 0);
