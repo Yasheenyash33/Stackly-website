@@ -1331,7 +1331,7 @@ body {
   /* min-height: 100vh; */
   width: 100%;
   display: flex;
-  padding: 20px;
+  padding: 4rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -1421,7 +1421,7 @@ body {
 /* ================= CONTACT SECTION ================= */
 
 .contact-section-dark {
-  padding: 2rem 1.5rem 6rem;
+  padding: 2rem 1.5rem ;
   background: transparent;
 }
 
@@ -1429,7 +1429,7 @@ body {
   background: #000;
   color: #fff;
   border-radius: 40px;
-  padding: 4rem;
+  padding: 0 2rem;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -1640,7 +1640,7 @@ body {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 .email > h4 {
   color: #ffffff;
@@ -1704,6 +1704,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 .social-icons {
@@ -1745,10 +1746,11 @@ body {
   align-items: center;
   font-size: 16px;
   gap: 10px;
+  margin-top: 30px;
 }
 
 .rights-text {
-  font-size: 28px;
+  font-size: 75px;
 
   text-align: center;
   opacity: 0.9;
