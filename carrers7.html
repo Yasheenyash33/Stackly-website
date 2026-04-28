@@ -237,71 +237,107 @@
  
 <section class="personal-wrapper">
 
-  <div class="personal-card">
+  <form class="personal-card" id="personalForm">
 
     <h2 class="form-title">Fill Your Application</h2>
 
     <!-- Steps -->
-  <div class="steps1">
-  <span  data-step="1">Applicant Details</span>
-  <span data-step="2">Professional Experience</span>
-  <span data-step="3">Educational Qualifications</span>
-  <span class="active"  data-step="4">Personal Details</span>
-  <span data-step="5">Review & Submit</span>
-</div>
+    <div class="steps1">
+      <span data-step="1">Applicant Details</span>
+      <span data-step="2">Professional Experience</span>
+      <span data-step="3">Educational Qualifications</span>
+      <span class="active" data-step="4">Personal Details</span>
+      <span data-step="5">Review & Submit</span>
+    </div>
 
     <!-- Form Grid -->
     <div class="form-grid">
 
       <div class="form-group">
         <label>First Name</label>
-        <select><option>Eg: UI/UX Design</option></select>
-      </div>
-
-      <div class="form-group">
-        <label>Surname</label>
-        <select><option>Eg: UI/UX Design</option></select>
-      </div>
-
-      <div class="form-group">
-        <label>Last Name</label>
-        <select><option>Eg: UI/UX Design</option></select>
-      </div>
-
-      <div class="form-group">
-        <label>Gender</label>
-        <select><option>Eg: UI/UX Design</option></select>
+        <input type="text" placeholder="Enter first name" required>
       </div>
 
       <div class="form-group">
         <label>Middle Name</label>
-        <select><option>Eg: UI/UX Design</option></select>
+        <input type="text" placeholder="Enter middle name">
       </div>
 
       <div class="form-group">
         <label>Last Name</label>
-        <select><option>Eg: UI/UX Design</option></select>
+        <input type="text" placeholder="Enter last name" required>
       </div>
 
-      <!-- Upload -->
+      <div class="form-group">
+        <label>Surname</label>
+        <input type="text" placeholder="Enter surname" required>
+      </div>
+
+      <div class="form-group">
+        <label>Gender</label>
+        <select required>
+          <option value="">Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <!-- File Upload -->
       <div class="form-group full">
         <label>Upload Certificate</label>
         <p class="hint">(Supported Format: Png, Jpg, JPEG · Max Size: 4.5 MB)</p>
-        <input type="file">
+        <input type="file" accept="image/png, image/jpeg" required>
       </div>
 
     </div>
 
     <!-- Footer -->
     <div class="form-footer1">
-           <a href="./carrers8.html" class="apply-link">
-  <button class="apply-now-btn">Next</button>
-</a>
+      <button type="submit" class="apply-now-btn">Next</button>
     </div>
 
-  </div>
+  </form>
 
 </section>
+
+<!-- Styles -->
+<style>
+  input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #0d0d0d;
+    color: #fff;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .form-group.full {
+    grid-column: span 2;
+  }
+</style>
+
+<!-- Validation + Navigation -->
+<script>
+  const form = document.getElementById("personalForm");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if (form.checkValidity()) {
+      window.location.href = "carrers8.html";
+    } else {
+      form.reportValidity();
+    }
+  });
+</script>
 
 
 

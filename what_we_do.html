@@ -751,6 +751,17 @@ Reach us
           cursor.style.opacity = "0.9";
         });
       });
+
+      // cards 
+      const cards = document.querySelectorAll(".cards-slider .card");
+let current = 0;
+
+setInterval(() => {
+  cards[current].classList.remove("active");
+  current = (current + 1) % cards.length;
+  cards[current].classList.add("active");
+}, 2500);
+
     </script>
     
 <script src="./what.js"></script>

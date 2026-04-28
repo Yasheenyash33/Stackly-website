@@ -236,158 +236,185 @@
 
 <section class="experience-wrapper">
 
-  <div class="experience-card">
+  <form class="experience-card" id="expForm">
 
     <h2 class="form-title">Fill Your Application</h2>
 
     <!-- Steps -->
     <div class="steps1">
-  <span  data-step="1">Applicant Details</span>
-  <span class="active" data-step="2">Professional Experience</span>
-  <span data-step="3">Educational Qualifications</span>
-  <span data-step="4">Personal Details</span>
-  <span data-step="5">Review & Submit</span>
-</div>
+      <span data-step="1">Applicant Details</span>
+      <span class="active" data-step="2">Professional Experience</span>
+      <span data-step="3">Educational Qualifications</span>
+      <span data-step="4">Personal Details</span>
+      <span data-step="5">Review & Submit</span>
+    </div>
 
     <!-- Form Grid -->
     <div class="form-grid">
 
       <div class="form-group">
         <label>Current Position</label>
-        <select>
-          <option>Eg: UI/UX Design</option>
-           <option>Eg: UI/UX Design</option>
-            <option>Eg: UI/UX Design</option>
-             <option>Eg: UI/UX Design</option>
-
+        <select required>
+          <option value="">Select Position</option>
+          <option>UI/UX Designer</option>
+          <option>Frontend Developer</option>
         </select>
       </div>
 
       <div class="form-group">
         <label>Years of Experience</label>
-        <select>
-          <option>Eg: 3 Years</option>
-          <option>Eg: 3 Years</option>
-          <option>Eg: 3 Years</option>
-          <option>Eg: 3 Years</option>
+        <select required>
+          <option value="">Select Experience</option>
+          <option>1 Year</option>
+          <option>3 Years</option>
+          <option>5 Years</option>
         </select>
       </div>
 
       <div class="form-group">
         <label>Job Title</label>
-        <select>
-          <option>Eg: UI/UX Designer</option>
-              <option>Eg: UI/UX Designer</option>
-                  <option>Eg: UI/UX Designer</option>
-                      <option>Eg: UI/UX Designer</option>
+        <select required>
+          <option value="">Select Job Title</option>
+          <option>UI/UX Designer</option>
+          <option>Developer</option>
         </select>
       </div>
 
       <div class="form-group">
         <label>Company Name</label>
-        <select>
-          <option>Eg: Stackly</option>
-          <option>Eg: Stackly</option>
-          <option>Eg: Stackly</option>
-          <option>Eg: Stackly</option>
+        <select required>
+          <option value="">Select Company</option>
+          <option>Stackly</option>
         </select>
       </div>
 
       <div class="form-group full">
         <label>Skills / Tools</label>
-        <select>
-          <option>Eg: Figma, React, CSS</option>
-           <option>Eg: Figma, React, CSS</option>
-            <option>Eg: Figma, React, CSS</option>
-             <option>Eg: Figma, React, CSS</option>
+        <select required>
+          <option value="">Select Skills</option>
+          <option>Figma</option>
+          <option>React</option>
         </select>
       </div>
 
       <div class="form-group">
         <label>Employment Type</label>
-        <select>
-          <option>Eg: Full Time</option>
-            <option>Eg: Full Time</option>
-              <option>Eg: Full Time</option>
-                <option>Eg: Full Time</option>
+        <select required>
+          <option value="">Select Type</option>
+          <option>Full Time</option>
+          <option>Part Time</option>
         </select>
       </div>
 
       <div class="form-group">
         <label>Location</label>
-        <select>
-          <option>Eg: Bengaluru</option>
-             <option>Eg: Bengaluru</option>
-                <option>Eg: Bengaluru</option>
+        <select required>
+          <option value="">Select Location</option>
+          <option>Bengaluru</option>
         </select>
       </div>
 
+      <!-- ✅ Professional Date Fields -->
       <div class="form-group">
         <label>Start Date</label>
-        <select>
-          <option>MM / YYYY</option>
-            <option>MM / YYYY</option>
-              <option>MM / YYYY</option>
-        </select>
+        <input type="text" id="startDate" placeholder="DD/MM/YYYY" required>
       </div>
 
       <div class="form-group">
         <label>End Date</label>
-        <select>
-          <option>MM / YYYY</option>
-            <option>MM / YYYY</option>
-              <option>MM / YYYY</option>
-        </select>
+        <input type="text" id="endDate" placeholder="DD/MM/YYYY" required>
       </div>
 
       <div class="form-group">
         <label>Current CTC</label>
-        <select>
-          <option>Eg: 6 LPA</option>
-           <option>Eg: 6 LPA</option>
-            <option>Eg: 6 LPA</option>
+        <select required>
+          <option value="">Select CTC</option>
+          <option>6 LPA</option>
         </select>
       </div>
 
       <div class="form-group">
         <label>Expected CTC</label>
-        <select>
-          <option>Eg: 8 LPA</option>
-           <option>Eg: 6 LPA</option>
-            <option>Eg: 6 LPA</option>
+        <select required>
+          <option value="">Select Expected</option>
+          <option>8 LPA</option>
         </select>
       </div>
 
       <div class="form-group full">
         <label>Notice Period</label>
-        <select>
-          <option>Eg: 30 Days</option>
-            <option>Eg: 30 Days</option>
-              <option>Eg: 30 Days</option>
+        <select required>
+          <option value="">Select Notice</option>
+          <option>30 Days</option>
         </select>
       </div>
 
       <!-- Upload -->
       <div class="form-group full">
         <label>Upload Certificate</label>
-        <p class="hint">(Png, Jpg, JPEG · Max 4.5 MB)</p>
-        <input type="file">
+        <input type="file" accept="image/png, image/jpeg" required>
       </div>
 
     </div>
 
-    <!-- Bottom Actions -->
+    <!-- Footer -->
     <div class="form-footer">
       <span class="add-more">Add Another Experience +</span>
-           <a href="./carrers6.html" class="apply-link">
-  <button class="apply-now-btn">Next</button>
-</a>
+      <button type="submit" class="apply-now-btn">Next</button>
     </div>
 
-  </div>
+  </form>
 
 </section>
 
+<!-- ✅ Styles -->
+<style>
+  input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .form-group.full {
+    grid-column: span 2;
+  }
+</style>
+
+<!-- ✅ Flatpickr -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+  // Apply to both fields
+  flatpickr("#startDate", {
+    dateFormat: "d/m/Y"
+  });
+
+  flatpickr("#endDate", {
+    dateFormat: "d/m/Y"
+  });
+
+  // Form validation + navigation
+  const form = document.getElementById("expForm");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if (form.checkValidity()) {
+      window.location.href = "carrers6.html";
+    } else {
+      form.reportValidity();
+    }
+  });
+</script>
 
 
 

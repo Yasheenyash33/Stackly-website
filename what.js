@@ -135,14 +135,6 @@ document.addEventListener("click", () => {
   Cards slider
 ================================ */
 
-const cards = document.querySelectorAll(".cards-slider .card");
-let current = 0;
-
-setInterval(() => {
-  cards[current].classList.remove("active");
-  current = (current + 1) % cards.length;
-  cards[current].classList.add("active");
-}, 2500);
 
 
 

@@ -2103,7 +2103,7 @@ body {
 /* solution*/
 .methodology-section {
   background: #000; /* outer black area */
-  padding: 120px 20px;
+  padding: 50px 20px;
   display: flex;
   justify-content: center;
 }
@@ -2141,7 +2141,7 @@ body {
 /*research section*/
 .research-section {
   background: #000;
-  padding: 100px 0;
+  padding: 10px 0;
   color: #fff;
 }
 
@@ -2538,7 +2538,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 .defined-us-text {
   line-height: 2;
@@ -2961,6 +2961,10 @@ body {
   justify-content: center;
 }
 
+.carrer-section-two{
+  overflow: hidden;
+}
+
 .city {
   font-size: 32px;
   font-weight: 500;
@@ -3182,7 +3186,7 @@ body {
 }
 
 .opportunities {
-  margin: 60px 0;
+  margin: 60px 0 0 0;
   color: #fff;
 }
 
@@ -3196,7 +3200,7 @@ body {
 
 .career-join {
   padding: 0 158px;
-  margin: 100px 0;
+  margin: 20px 0;
 }
 .career-join-img {
   width: 400px;
@@ -3287,6 +3291,7 @@ body {
   gap: 60px;
   padding: 80px 100px;
   color: #fff;
+  overflow: hidden  ;
 }
 
 .filters {
@@ -3296,6 +3301,7 @@ body {
   height: fit-content;
   max-height: calc(90vh - 100px);
   overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .filters-header {
@@ -3695,6 +3701,19 @@ body {
 }
 
 .form-group select:focus {
+  outline: none;
+  border-color: #7fe0c3;
+}
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 16px;
+  background: #0e0e0e;
+  border: 1px solid #444;
+  color: #aaa;
+  border-radius: 4px;
+}
+
+.form-group input[type="text"]:focus {
   outline: none;
   border-color: #7fe0c3;
 }

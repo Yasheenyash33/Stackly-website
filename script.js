@@ -395,7 +395,7 @@ if (partnersSection) {
       });
     },
     {
-      threshold: 0.60   // 30% visible aana trigger
+      threshold: 0.50   // 30% visible aana trigger
     }
   );
 

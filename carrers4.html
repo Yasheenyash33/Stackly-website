@@ -238,202 +238,83 @@
  
  
  
- 
- 
- 
- 
- <section class="application-wrapper">
+<section class="application-wrapper">
 
-  <div class="application-card">
+  <form class="application-card" id="appForm">
 
     <h2 class="app-title">Start Your Application</h2>
 
-    <!-- Steps -->
-  <div class="steps1">
-  <span class="active" data-step="1">Applicant Details</span>
-  <span data-step="2">Professional Experience</span>
-  <span data-step="3">Educational Qualifications</span>
-  <span data-step="4">Personal Details</span>
-  <span data-step="5">Review & Submit</span>
-</div>
-
     <!-- Uploads -->
     <div class="upload-row">
-
       <div class="upload-box">
         <label>Upload Resume</label>
-        <p class="hint">
-          Resume/CV (Doc, Docx, Pdf · Max 4.5 MB)
-        </p>
-        <input type="file">
+        <input type="file" required>
       </div>
 
       <div class="upload-box">
         <label>Upload Photo</label>
-        <p class="hint">
-          Png, Jpg, JPEG · Max 4.5 MB
-        </p>
-        <input type="file">
+        <input type="file" required>
       </div>
-
     </div>
 
-    <!-- Form Fields -->
     <div class="form-group">
       <label>Which position are you applying for?</label>
-      <select>
-        <option>Eg: UI/UX Design</option>
-        <option>Eg: UI/UX Designer</option>
-        <option>Eg: UI/UX Designer</option>
-        <option>Eg: UI/UX Designer</option>
+      <select required>
+        <option value="">Select Position</option>
+        <option>UI/UX Designer</option>
       </select>
     </div>
 
     <div class="form-group">
       <label>Your Current Position</label>
-      <select>
-        <option>Eg: UI/UX Designer</option>
-        <option>Eg: UI/UX Designer</option>
-        <option>Eg: UI/UX Designer</option>
-        <option>Eg: UI/UX Designer</option>
+      <select required>
+        <option value="">Select Role</option>
+        <option>Fresher</option>
       </select>
     </div>
 
     <div class="form-group">
       <label>Ready to relocate</label>
-      <select>
-        <option>Yes / No</option>
+      <select required>
+        <option value="">Select Option</option>
         <option>Yes</option>
         <option>No</option>
       </select>
     </div>
 
     <div class="form-action">
-           <a href="./carrers5.html" class="apply-link">
-  <button class="apply-now-btn">Next</button>
-</a>
+      <button type="submit" class="apply-now-btn">Next</button>
     </div>
 
-  </div>
+  </form>
 
 </section>
 
+<script>
+  const form = document.getElementById("appForm");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // stop default submit
+
+    if (form.checkValidity()) {
+      // all fields valid → go next page
+      window.location.href = "carrers5.html";
+    } else {
+      // show browser validation messages
+      form.reportValidity();
+    }
+  });
+</script>
+
  
+
  
  
  
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
  
  <!-- FOOTER SECTION -->
 
