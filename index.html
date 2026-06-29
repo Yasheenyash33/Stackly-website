@@ -2,9 +2,12 @@
 <html lang="en">
   <head>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
 >>>>>>> ffa51d4 (Add "Who We Are" page with company overview, leadership, and locations)
+=======
+>>>>>>> 46ce268 (final change)
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stackly - Empowering Businesses</title>
@@ -315,7 +318,7 @@
             </nav>
           </aside>
 
-          <div class="bar">
+          <div class="bar1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -394,11 +397,7 @@
               services to enhance efficiency, streamline processes, and foster
               growth for businesses of all sizes.
             </p>
-            <div
-              data-aos="fade-up"
-              data-aos-duration="500"
-              class="hero-footer"
-            >
+            <div data-aos="fade-up" data-aos-duration="500" class="hero-footer">
               <a href="./errorpage.html" class="cta-button">
                 Explore what we do
               </a>
@@ -918,10 +917,19 @@
 
             <!-- Right Column: Form -->
             <div data-aos="fade-up" class="contact-form-container">
-              <form class="contact-form">
+              <form
+                class="contact-form"
+                id="contactForm"
+                onsubmit="return false;"
+              >
                 <div class="form-row">
                   <div data-aos="fade-up" class="input-group">
-                    <input type="text" placeholder="Name" required />
+                    <input
+                      type="text"
+                      name="from_name"
+                      placeholder="Name"
+                      required
+                    />
                     <span class="input-arrow">
                       <svg
                         width="18"
@@ -938,8 +946,14 @@
                       </svg>
                     </span>
                   </div>
+
                   <div data-aos="fade-up" class="input-group">
-                    <input type="email" placeholder="Email" required />
+                    <input
+                      type="email"
+                      name="from_email"
+                      placeholder="Email"
+                      required
+                    />
                     <span class="input-arrow">
                       <svg
                         width="18"
@@ -957,8 +971,14 @@
                     </span>
                   </div>
                 </div>
+
                 <div data-aos="fade-up" class="input-group">
-                  <input type="text" placeholder="Subject" required />
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject"
+                    required
+                  />
                   <span class="input-arrow">
                     <svg
                       width="18"
@@ -975,8 +995,14 @@
                     </svg>
                   </span>
                 </div>
+
                 <div data-aos="fade-up" class="input-group">
-                  <textarea placeholder="Type something" rows="3"></textarea>
+                  <textarea
+                    name="message"
+                    placeholder="Type something"
+                    rows="3"
+                    required
+                  ></textarea>
                   <span class="input-arrow">
                     <svg
                       width="18"
@@ -1020,9 +1046,63 @@
 
               <div class="large-footer-text">Connect.Build.Inspire.</div>
             </div>
+
+            <!-- pop up -->
+            <div id="popup" class="popup">
+              <div class="popup-content">
+                <span id="popup-message">Message Sent Successfully!</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- EMAIL JS -->
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+      <script>
+        emailjs.init("E-M9v1Gbutnt48P4K");
+
+        function showPopup(message, success = true) {
+          const popup = document.getElementById("popup");
+          const popupMessage = document.getElementById("popup-message");
+
+          popupMessage.textContent = message;
+
+          popup.querySelector(".popup-content").style.background = success
+            ? "#22c55e"
+            : "#ef4444";
+
+          popup.classList.add("show");
+
+          setTimeout(() => {
+            popup.classList.remove("show");
+          }, 3000);
+        }
+
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const form = this;
+
+            emailjs
+              .sendForm("service_u471qsp", "template_rzae5hk", form)
+              .then(() => {
+                showPopup("Message Sent Successfully!", true);
+                form.reset();
+              })
+              .catch((error) => {
+                console.error("EmailJS Error:", error);
+                showPopup("Failed to send message!", false);
+              });
+          });
+      </script>
+
+      <!-- <script>
+        emailjs.init("E-M9v1Gbutnt48P4K");
+      </script> -->
 
       <!-- FOOTER SECTION -->
       <section class="footer">
@@ -1045,14 +1125,15 @@
                 <a href="./who-we-are.html"><h4>About Us</h4></a>
                 <a href="./contact.html"><h4>Contact Us</h4></a>
                 <a href="./contact.html#branches"><h4>Locations</h4></a>
-               
               </div>
 
               <div>
                 <a href="./privacy.html"><h4>Privacy Statement</h4></a>
                 <a href="./Terms.html"><h4>Terms & Conditions</h4></a>
                 <a href="./cookie.html"><h4>Cookie Policy</h4></a>
-                <a href="./Accessibility.html"><h4>Accessibility Statement</h4></a>
+                <a href="./Accessibility.html"
+                  ><h4>Accessibility Statement</h4></a
+                >
               </div>
             </div>
           </div>
@@ -1120,7 +1201,6 @@
 
         <div class="footer-bottom">
           <span><h4>Stackly © 2026</h4></span>
-     
         </div>
 
         <h1 class="rights-text">All Rights Reserved.</h1>
