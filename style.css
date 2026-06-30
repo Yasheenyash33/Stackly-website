@@ -1588,7 +1588,7 @@ body {
 
 .submit-btn:hover {
   border-color: #4ade80;
-  color: #4ade80;
+  color: hsl(0, 0%, 100%);
 }
 
 .large-footer-text {

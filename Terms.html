@@ -89,119 +89,129 @@
         <!-- CURSOR -->
     <div class="custom-cursor"></div>
   
-<!-- NAVBAR -->
-    <header class="navbar">
-       <a href="index.html">
-    <img src="photo/logo.png" alt="Tech Icon" class="tech-icon">
-  </a>
-</div>
+<header class="navbar">
+        <a href="index.html">
+          <img src="photo/logo.png" alt="Tech Icon" class="tech-icon" />
+        </a>
+        <nav class="nav-links">
+          <a href="what_we_do.html" class="nav-item">What We Do</a>
+          <a href="./what_defined_us.html" class="nav-item">What Defines Us</a>
+          <a href="./who-we-are.html" class="nav-item">Who We Are</a>
 
-       <nav class="nav-links">
+          <!-- Careers Dropdown -->
+          <div class="nav-item nav-dropdown">
+            <!-- Careers link -->
+            <a href="./carrers1.html" class="nav-link-with-icon"> Careers </a>
 
-<nav class="nav-links">
-  <a href="what_we_do.html" class="nav-item">What We Do</a>
-  <a href="./what_defined_us.html" class="nav-item">What Defines Us</a>
-  <a href="./who-we-are.html" class="nav-item">Who We Are</a>
+            <!-- Arrow (only this toggles dropdown) -->
+            <!-- <span class="arrow-toggle" onclick="toggleCareerDropdown(event)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="nav-icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </span> -->
 
-  <!-- Careers Dropdown -->
-  <div class="nav-item nav-dropdown">
+            <!-- Dropdown content -->
+            <div class="dropdown-menu">
+              <a href="./carrers1.html">Careers At Stackly</a>
+              <a href="./carrers2.html">Current Opening</a>
+            </div>
+          </div>
+        </nav>
 
-    <!-- Careers link -->
-    <a href="./carrers1.html" class="nav-link-with-icon">
-      Careers
-    </a>
+        <div class="hamburger" id="hamburger">
+          <!-- Mobile Menu Button -->
+          <div class="menu-icon" id="menuBtn">☰</div>
 
-    <!-- Arrow (only this toggles dropdown) -->
-    <!-- <span class="arrow-toggle" onclick="toggleCareerDropdown(event)">
-      <svg xmlns="http://www.w3.org/2000/svg"
-           fill="none"
-           viewBox="0 0 24 24"
-           stroke-width="1.5"
-           stroke="currentColor"
-           class="nav-icon">
-        <path stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-      </svg>
-    </span> -->
+          <!-- Mobile Aside -->
+          <aside class="mobile-aside" id="mobileAside">
+            <span class="close" id="closeBtn">✖</span>
 
-    <!-- Dropdown content -->
-        <div class="dropdown-menu">
-      <a href="./carrers1.html">Careers At Stackly</a>
-      <a href="./carrers2.html">Current Opening</a>
-    </div>
+            <nav class="nav-linksmobile-nav">
+              <a href="what_we_do.html" class="nav-item">What We Do</a>
+              <a href="./what_defined_us.html" class="nav-item"
+                >What Defines Us</a
+              >
+              <a href="./who-we-are.html" class="nav-item">Who We Are</a>
 
-  </div>
-</nav>
+              <!-- Careers Dropdown -->
+              <div class="nav-item nav-dropdown">
+                <div class="dropdown-head">
+                  <a href="./carrers1.html">Careers</a>
 
+                  <!-- <span
+                    class="arrow-toggle"
+                    onclick="toggleCareerDropdown(event)"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="nav-icon"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                      />
+                    </svg>
+                  </span> -->
+                </div>
 
+                <div class="dropdown-menu">
+                  <a href="./carrers1.html">Careers At Stackly</a>
+                  <a href="./carrers2.html">Current Opening</a>
+                </div>
+              </div>
+            </nav>
+          </aside>
 
-</nav>
-
-  
-
-
-
- <div class="hamburger" id="hamburger">
- 
-<!-- Mobile Menu Button -->
-<div class="menu-icon" id="menuBtn">☰</div>
-
-<!-- Mobile Aside -->
-<aside class="mobile-aside" id="mobileAside">
-  <span class="close" id="closeBtn">✖</span>
-
-  <nav class="nav-linksmobile-nav">
-
-    <a href="what_we_do.html" class="nav-item">What We Do</a>
-    <a href="./what_defined_us.html" class="nav-item">What Defines Us</a>
-    <a href="./who-we-are.html" class="nav-item">Who We Are</a>
-
-    <!-- Careers Dropdown -->
-    <div class="nav-item nav-dropdown">
-      <div class="dropdown-head">
-        <a href="./carrers1.html">Careers</a>
-
-      <span class="arrow-toggle" onclick="toggleCareerDropdown(event)">
-  <!-- <svg xmlns="http://www.w3.org/2000/svg"
-       fill="none"
-       viewBox="0 0 24 24"
-       stroke-width="1.5"
-       stroke="currentColor"
-       class="nav-icon">
-    <path stroke-linecap="round"
-          stroke-linejoin="round"
-          d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-  </svg> -->
-</span>
-
-      </div>
-
-      <div class="dropdown-menu">
-        <a href="./carrers1.html">Careers At Stackly</a>
-        <a href="./carrers2.html">Current Opening</a>
-      </div>
-    </div>
-
-  </nav>
-</aside>
-
-    <div class="bar">
-             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-</svg>
-
+          <div class="bar1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
             </svg>
-    </div>
-    <div class="bar">    
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" />
-</svg>
-
-    </div>
-    </div>  
-                
-    </header>
+          </div>
+          <a href="mailto:enquiry@stackly.com" class="bar">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </header>
 
  <div class="scroll-explore">
   <svg class="circle-text" viewBox="0 0 200 200">
