@@ -194,7 +194,9 @@ document.addEventListener("DOMContentLoaded", () => {
     threshold: 0.2   // SMALL threshold → reliable
   });
 
-  observer.observe(section);
+  if (section) {
+    observer.observe(section);
+  }
 
 });
 
@@ -409,17 +411,19 @@ if (partnersSection) {
 const contactSection = document.querySelector("#contact");
 const image = document.querySelector(".image");
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      image.classList.add("animate");
-    } else {
-      image.classList.remove("animate"); // veliya pona remove
-    }
-  });
-}, { threshold: 0.5 });
+if (contactSection && image) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        image.classList.add("animate");
+      } else {
+        image.classList.remove("animate"); // veliya pona remove
+      }
+    });
+  }, { threshold: 0.5 });
 
-observer.observe(contactSection);
+  observer.observe(contactSection);
+}
 
 
 // menu bar/////

@@ -257,7 +257,8 @@
 @media (max-width: 1440px) {
   .scroll-explore {
     top: 75%;
-    left: 85%;
+    right: 4%;
+    left: auto;
     width: 120px;
     height: 120px;
   }
@@ -266,7 +267,8 @@
 @media (max-width: 1024px) {
   .scroll-explore {
     top: 75%;
-    left: 80%;
+    right: 4%;
+    left: auto;
     width: 120px;
     height: 120px;
   }
@@ -290,8 +292,9 @@
 @media (max-width: 768px) {
   .scroll-explore {
     top: 80%;
-    left: 80%;
-    transform: translateX(-50%);
+    right: 4%;
+    left: auto;
+    transform: none;
     width: 100px;
     height: 100px;
   }
@@ -315,6 +318,9 @@
 @media (max-width: 480px) {
   .scroll-explore {
     top: 82%;
+    right: 4%;
+    left: auto;
+    transform: none;
     width: 85px;
     height: 85px;
   }
@@ -2984,5 +2990,67 @@
   .job-desc {
     padding: 0 16px;
     font-size: 0.85rem;
+  }
+}
+
+/* ==========================================================================
+   CROSS-BROWSER COMPATIBILITY & MACBOOK/LAPTOP BREAKPOINTS (1280px - 1440px)
+   ========================================================================== */
+
+/* MacBook Pro / Air / Large Laptops (1280px - 1440px) */
+@media (max-width: 1440px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .services-container {
+    gap: 2.5rem;
+    padding: 0 2rem;
+  }
+  .pin-wrapper {
+    padding: 4rem 2rem 0;
+    gap: 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .pin-header {
+    width: 45%;
+  }
+  .pin-cards {
+    width: 50%;
+  }
+  .footer-links {
+    gap: 80px;
+  }
+  .navbar {
+    padding: 1.2rem 2rem;
+  }
+}
+
+/* Medium/Small Laptops & Large Tablets (1025px - 1280px) */
+@media (max-width: 1280px) {
+  .footer-links {
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  .footer-left {
+    max-width: 100%;
+  }
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  .hero-title {
+    font-size: 3rem;
+  }
+  .services-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .service-details {
+    max-width: 100%;
+  }
+  .partner-card {
+    margin: 24px;
+    padding: 3rem 2rem;
   }
 }

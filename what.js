@@ -177,12 +177,15 @@ defined section
   const items = document.querySelectorAll(".defined-us");
 
   items.forEach(item => {
-    item.querySelector("h3").addEventListener("click", () => {
-      items.forEach(i => {
-        if (i !== item) i.classList.remove("active");
+    const h3 = item.querySelector("h3");
+    if (h3) {
+      h3.addEventListener("click", () => {
+        items.forEach(i => {
+          if (i !== item) i.classList.remove("active");
+        });
+        item.classList.toggle("active");
       });
-      item.classList.toggle("active");
-    });
+    }
   });
 
 /* ===============================
