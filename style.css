@@ -1266,6 +1266,7 @@ body {
   color: #9ca3af;
   max-width: 900px;
   margin: 0 auto;
+  padding-bottom: 2rem;
   opacity: 0;
   transform: translateY(50px);
   transition: 0.8s ease;
@@ -1378,12 +1379,36 @@ body {
   font-size: 20px;
 }
 
+.visit-btn-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: fit-content;
+  gap: 10px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+margin: auto;
+  color: #fff;
+  background: transparent;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(90deg, #8cd8bc, #234f70) padding-box,
+    linear-gradient(90deg, #8cd8bc, #234f70) border-box;
+  color: #ffffff;
+
+  transition: all 0.3s ease;
+}
+
 .join-btn-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-
+width: fit-content;
   padding: 12px 26px;
   border-radius: 999px;
   text-decoration: none;

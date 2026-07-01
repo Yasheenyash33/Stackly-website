@@ -222,12 +222,6 @@
 </div>
 
 
-
-
-
-
-
-
 <div class="back1">
   <a href="#" class="back-link1" onclick="goBack(event)">
     
@@ -241,9 +235,6 @@
 
   </a>
 </div>
-
-
-
 
 
 
@@ -658,17 +649,9 @@
       </div>
 
       <!-- Hyderabad -->
+    
       <div class="branch-card">
-        <h3>Hyderabad Branch Office</h3>
-        <p>
-          Jayasudha Heights, 4th Floor,<br>
-          Madhapur, Hyderabad,<br>
-          Telangana - 500081
-        </p>
-        <a href="https://www.google.com/maps?q=Madhapur,Hyderabad" target="_blank">View on Map →</a>
-      </div>
-      <div class="branch-card">
-  <h3>Hyderabad Phase II</h3>
+  <h3>Hyderabad </h3>
   <p>
    4th floor, R.R. Towers<br>
     Plot No. 188 & 189, Kavuri Hills,<br>
@@ -685,13 +668,6 @@
   </div>
 
 </section>
-
-
-
-
-
-
-
 
 
 
@@ -796,7 +772,7 @@
         <h1 class="rights-text">All Rights Reserved.</h1>
       </section>
 
-    <script src="./script.js"></script>
+    <!-- <script src="./script.js"></script> -->
 
     <script>
       function goBack() {
@@ -849,6 +825,111 @@
           cursor.style.transform = "translate(-50%, -50%) scale(1)";
           cursor.style.opacity = "0.9";
         });
+      });
+    </script>
+
+    <script>
+      // menu bar/////
+
+
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileAside = document.getElementById("mobileAside");
+  const closeBtn = document.getElementById("closeBtn");
+
+  menuBtn.addEventListener("click", () => {
+    mobileAside.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    mobileAside.classList.remove("active");
+  });
+
+  function toggleCareerDropdown(e) {
+    e.stopPropagation();
+    e.target.closest(".nav-dropdown").classList.toggle("active");
+  }
+
+  /* ===============================
+   CIRCLE SCROLL FILL
+================================ */
+document.addEventListener("DOMContentLoaded", () => {
+
+  const circles = document.querySelectorAll(".center-logo");
+  if (!circles.length) return;
+
+  window.addEventListener("scroll", () => {
+    const max = document.body.scrollHeight - window.innerHeight;
+    const progress = Math.min(Math.max(window.scrollY / max, 0), 1);
+
+    circles.forEach(circle => {
+      circle.style.setProperty("--fill", progress);
+    });
+  });
+
+});
+
+AOS.init({
+    duration: 400,
+    easing: 'ease-in-out',
+    once: true,
+});
+
+
+  // get current file name only
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // ALL nav links (top + dropdown)
+  const allLinks = document.querySelectorAll(
+    ".nav-item, .nav-link-with-icon, .dropdown-menu a"
+  );
+
+  allLinks.forEach(link => {
+    const linkPage = link.getAttribute("href")?.replace("./", "");
+
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+
+      // if dropdown item → also highlight Careers parent
+      if (link.closest(".dropdown-menu")) {
+        document
+          .querySelector(".nav-link-with-icon")
+          .classList.add("active");
+      }
+    }
+  });
+
+
+/* ===============================
+ carrer drop don
+================================ */
+
+
+function toggleCareerDropdown(e) {
+  e.stopPropagation();
+  const dropdown = e.currentTarget.parentElement;
+  dropdown.classList.toggle("active");
+}
+
+/* Close dropdown when clicking outside */
+document.addEventListener("click", () => {
+  document.querySelectorAll(".nav-dropdown").forEach(item => {
+    item.classList.remove("active");
+  });
+});
+
+/* ===============================
+  Scroll explore 
+================================ */
+
+      window.addEventListener("scroll", function () {
+        const circle = document.querySelector(".center-logo");
+        if (!circle) return;
+
+        const maxScroll =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY / maxScroll;
+
+        circle.style.setProperty("--fill", scrolled);
       });
     </script>
 

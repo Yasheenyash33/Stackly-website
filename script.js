@@ -118,7 +118,9 @@ const projectObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 
-projectObserver.observe(projectSection);
+if (projectSection) {
+  projectObserver.observe(projectSection);
+}
 
 
 
