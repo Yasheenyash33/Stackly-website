@@ -33,24 +33,21 @@ button {
   font-family: "alter";
 }
 
-*,
-*::before,
-*::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html,
-body {
-  overflow-x: hidden;
-  width: 100%;
 }
 
 body {
   font-family: var(--font-family);
   background-color: var(--bg-color);
   color: var(--text-primary);
+  max-width: 1280px;
+  margin: auto;
+  /* overflow-x: hidden; */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Background & Canvas */
@@ -89,7 +86,6 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: background 0.3s ease;
-  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   display: none;
   cursor: pointer;
@@ -200,8 +196,6 @@ body {
   /* position: fixed; */
   top: 0;
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
   z-index: 100;
 
   /* background-color: #000; */
@@ -228,7 +222,6 @@ body {
   border-radius: 999px;
   padding: 0.75rem 2rem;
   gap: 6rem;
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 } */
 
@@ -376,7 +369,7 @@ body {
 .scroll-explore {
   position: fixed;
   top: 80%;
-  right: 2%;
+  left: 90%;
   width: 140px;
   height: 140px;
   z-index: 1000;
@@ -477,7 +470,6 @@ body {
   height: 48px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.05);
-  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 
   display: flex;
@@ -655,7 +647,6 @@ body {
   text-decoration: none;
   font-size: 0.9rem;
   transition: all 0.3s ease;
-  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   margin-bottom: 50px;
 }
@@ -970,7 +961,6 @@ body {
   height: 80px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
@@ -1038,32 +1028,11 @@ body {
 .video-container {
   width: 80%;
   max-width: 1000px;
-  position: relative;
+  aspect-ratio: 16/9;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-@supports not (aspect-ratio: 16/9) {
-  .video-container::before {
-    content: "";
-    display: block;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  }
-  .video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-@supports (aspect-ratio: 16/9) {
-  .video-container {
-    aspect-ratio: 16/9;
-  }
 }
 
 .video-container video {
@@ -1218,17 +1187,17 @@ body {
 
 /* FULL WIDTH CARD */
 .partner-card {
-  width: auto;
+  width: 100%;
   min-height: 80vh;
   padding: 4rem 6rem;
   position: relative;
   overflow: hidden;
   text-align: center;
   color: white;
-  margin: 48px auto;
+  margin: 48px;
 
   /* full width look */
-  max-width: 1200px;
+  max-width: 100%;
   border-radius: 20px;
   box-shadow: none;
 
@@ -1368,7 +1337,7 @@ body {
   overflow: hidden;
 }
 
-#contact .image {
+.image {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1684,24 +1653,14 @@ width: fit-content;
 
 .footer-tagline {
   margin: 15px 0 40px;
+
   font-size: 32px;
+
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #7fe0c3;
+  color: rgba(127, 224, 195, 0.08); /* very light fill */
+  -webkit-text-stroke: 0.2px #7fe0c3;
 }
-
-@supports (-webkit-text-stroke: 0.2px #7fe0c3) or (text-stroke: 0.2px #7fe0c3) {
-  .footer-tagline {
-    color: rgba(127, 224, 195, 0.08); /* very light fill */
-    -webkit-text-stroke: 0.2px #7fe0c3;
-  }
-}
- .footer-tagline >ul>li{
-  list-style-type: none;
-  font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 8px;
- }
 .contact {
   display: flex;
   gap: 16px;
@@ -1753,8 +1712,6 @@ width: fit-content;
 
 .footer-links {
   display: flex;
-  justify-content: space-between;
- 
   gap: 120px;
 }
 
@@ -1805,7 +1762,11 @@ width: fit-content;
 }
 
 .footer-bottom {
+
   display: flex;
+
+  justify-content: space-between;
+
   justify-content: center;
   align-items: center;
   font-size: 16px;
@@ -1813,20 +1774,12 @@ width: fit-content;
   margin-top: 30px;
 }
 
-.footer-top,
-.footer-middle,
-.footer-bottom {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-}
-
 .rights-text {
-  font-size: clamp(32px, 6vw, 75px);
+  font-size: 75px;
+
   text-align: center;
   opacity: 0.9;
   margin-bottom: 30px;
-  word-wrap: break-word;
 }
 .footer-reveal {
   clip-path: inset(100% 0 0 0);
