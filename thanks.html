@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Empowering Businesses</title>
+    <meta name="description"
+        content="We are a forward-thinking IT company specializing in innovative technology solutions that drive business transformation.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+   
+    <link rel="stylesheet" href="./style.css">
+     <link rel ="stylesheet" href="mediaquery.css">
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Adjust navbar links for anchor navigation */
+        .nav-item.active {
+            color: var(--text-primary);
+        }
+
+        .career-join-img {
+            background-image: url('office_team.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Theme transitions for sections */
+        #home,
+        #services,
+        #projects {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+        }
+
+        #expertise,
+        #careers,
+        #partners,
+        #contact {
+            background-color: #ffffff;
+            color: #111111;
+        }
+    </style>
+
+            <!-- CURSOR STYLE -->
+    <style>
+      /* Hide default cursor */
+      /* body {
+        cursor: none;
+      } */
+
+      /* Cursor dot */
+      .custom-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        background: linear-gradient(45deg, var(--accent-start), var(--accent-end));
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.9;
+        transition:
+          transform 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+          opacity 0.3s ease,
+          background 0.3s ease;
+        z-index: 9999;
+      }
+    </style>
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<body>
+
+        <!-- CURSOR -->
+    <div class="custom-cursor"></div>
+  
+<!-- NAVBAR -->
+<header class="navbar">
+        <a href="index.html">
+          <img src="photo/logo.png" alt="Tech Icon" class="tech-icon" />
+        </a>
+        <nav class="nav-links">
+          <a href="what_we_do.html" class="nav-item">What We Do</a>
+          <a href="./what_defined_us.html" class="nav-item">What Defines Us</a>
+          <a href="./who-we-are.html" class="nav-item">Who We Are</a>
+
+          <!-- Careers Dropdown -->
+          <div class="nav-item nav-dropdown">
+            <!-- Careers link -->
+            <a href="./carrers1.html" class="nav-link-with-icon"> Careers </a>
+
+            <!-- Arrow (only this toggles dropdown) -->
+            <!-- <span class="arrow-toggle" onclick="toggleCareerDropdown(event)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="nav-icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </span> -->
+
+            <!-- Dropdown content -->
+            <div class="dropdown-menu">
+              <a href="./carrers1.html">Careers At Stackly</a>
+              <a href="./carrers2.html">Current Opening</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+          <!-- Mobile Menu Button -->
+          <div class="menu-icon" id="menuBtn">☰</div>
+
+          <!-- Mobile Aside -->
+          <aside class="mobile-aside" id="mobileAside">
+            <span class="close" id="closeBtn">✖</span>
+
+            <nav class="nav-linksmobile-nav">
+              <a href="what_we_do.html" class="nav-item">What We Do</a>
+              <a href="./what_defined_us.html" class="nav-item"
+                >What Defines Us</a
+              >
+              <a href="./who-we-are.html" class="nav-item">Who We Are</a>
+
+              <!-- Careers Dropdown -->
+              <div class="nav-item nav-dropdown">
+                <div class="dropdown-head">
+                  <a href="./carrers1.html">Careers</a>
+
+                  <!-- <span
+                    class="arrow-toggle"
+                    onclick="toggleCareerDropdown(event)"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="nav-icon"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                      />
+                    </svg>
+                  </span> -->
+                </div>
+
+                <div class="dropdown-menu">
+                  <a href="./carrers1.html">Careers At Stackly</a>
+                  <a href="./carrers2.html">Current Opening</a>
+                </div>
+              </div>
+            </nav>
+          </aside>
+
+          <a href="mailto:enquiry@stackly.com" class="bar">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </header>
+
+<div class="scroll-explore">
+  <svg class="circle-text" viewBox="0 0 200 200">
+    <defs>
+      <path id="circlePath"
+        d="M100,100
+           m-75,0
+           a75,75 0 1,1 150,0
+           a75,75 0 1,1 -150,0" />
+    </defs>
+    <text>
+      <textPath href="#circlePath">
+        SCROLL TO EXPLORE • SCROLL TO EXPLORE •
+      </textPath>
+    </text>
+  </svg>
+
+  <!-- CLICKABLE CENTER LOGO -->
+  <div class="center-logo">
+    <a href="#">
+      <img src="photo/logo-stackly (1) 2.png" alt="logo">
+    </a>
+  </div>
+</div>
+
+
+<div class="back1">
+  <a href="./index.html" class="back-link1">
+    <span class="icon-wrap1">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+      </svg>
+    </span>
+    <span class="back-text1">Back</span>
+  </a>
+</div>
+
+<section class="thanks">
+    <img src="./photo/Group 52.png" alt="image-sucess"/>
+    <h2>Thank You For Applying.</h2>
+    <h2>Your Application Has Been Successfully Submitted.</h2>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- CURSOR JS  -->
+    <script>
+      const cursor = document.querySelector(".custom-cursor");
+
+      let mouseX = 0,
+        mouseY = 0;
+      let posX = 0,
+        posY = 0;
+
+      // Track mouse
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      // Smooth movement
+      function animate() {
+        posX += (mouseX - posX) * 0.2;
+        posY += (mouseY - posY) * 0.2;
+
+        cursor.style.left = posX + "px";
+        cursor.style.top = posY + "px";
+
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      // Hover interaction
+      const hoverItems = document.querySelectorAll(
+        "a, button, svg, .hover-scale",
+      );
+
+      hoverItems.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+          cursor.style.transform = "translate(-50%, -50%) scale(3.8)";
+          cursor.style.opacity = "0.5"; // reduced opacity
+        });
+
+        item.addEventListener("mouseleave", () => {
+          cursor.style.transform = "translate(-50%, -50%) scale(1)";
+          cursor.style.opacity = "0.9";
+        });
+      });
+    </script>
+
+
+
+  <script src="./what.js"></script>
+  </body>
+  </html>
