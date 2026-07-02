@@ -48,9 +48,10 @@
   .logo span {
     font-size: 26px;
   }
-}
-.rights-text {
-  font-size: 65px;
+
+  .rights-text {
+    font-size: 65px;
+  }
 }
 
 /* Mobile */
